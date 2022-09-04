@@ -10,7 +10,7 @@
     <meta name="country" content="Argentina">
     <meta name="doc-type" content="Web Page">
 
-    <meta name="description" content="Venta de juegis de PC, equipos, accesorios, componentes!">
+    <meta name="description" content="Venta de juegos de PC, equipos, accesorios, componentes!">
     <meta name="keywords" content="">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -34,31 +34,36 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Juegos PC</a>
-                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Equipos y Accesorios
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Productos
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Equipos</a>
+                    <a class="dropdown-item" href="./pages/juegosPC.html">Juegos PC</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Accesorios</a>
+                    <a class="dropdown-item" href="./pages/equipos.html">Equipos</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Componenes</a>
+                    <a class="dropdown-item" href="./pages/accesorios.html">Accesorios</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./pages/calculadora.html"> Calculadora </a>
                 </li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
             </div>
+            <a class="navbar-brand" href="#">Login</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Carrito</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </nav>
     </header>
     <figure class="migaja">
@@ -74,6 +79,15 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero culpa numquam consectetur enim nam deleniti, debitis voluptatum, totam ipsum laborum commodi omnis esse nulla aliquam? Magni sed minima provident?</p>
         </div>
     </main>
+    <section>
+      <h3>Simulacion de carrito:</h3>
+      <p>Producto 1 - precio $ 500 - cantidad 1</p>
+      <p>Producto 2 - precio $ 800 - cantidad 2</p>
+      <p>Producto 3 - precio $ 1500 - cantidad 1</p>
+      <p>(Esto va a ir en unas estilo cards y de alguna forma lo pasare al carro)</p>
+      <button type="button" id="btnCalcular">Calcular total de la compra</button>
+      <p id="result"></p>
+    </section>
     <section>
         <p>Contenido, imagenes, videos, etc.</p>
     </section>
@@ -104,7 +118,7 @@
     <!--JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
+    <!--JavaScript-->
     <script src="./JS/index.js"></script>
 
 </body>
