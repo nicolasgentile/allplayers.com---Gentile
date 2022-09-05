@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  height: auto;
+  width: auto;
+  padding: 3px;
+  scroll-behavior: smooth;
+  background-color: rgba(0, 255, 193, 0.1215686275);
+}
+
+/* Header */
+/* Footer */
+footer {
+  width: auto;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #006f54;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.barra {
+  padding-top: 15px;
+}
+
+.barra li {
+  list-style: none;
+}
+
+.barra ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.barra a:hover {
+  background-color: #fff;
+}
+
+.footerRedes {
+  font-size: 20px;
+  letter-spacing: 15px;
+}
+
+.fa-brands {
+  padding: 5px;
+  border: 1px solid #000000;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 32px;
+  text-align: center;
+  padding-left: 20px;
+  color: #000000 !important;
+}
+
+.footerRedes i:hover {
+  background-color: #fff;
+}
+
+.footerCopy {
+  color: #000000;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,81 @@
+// C:\Users\Usuario\Desktop\allplayerspc.com - Gentile>sass --watch css/estilos.scss css/estilos.css
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap');
+
+//Variables
+$colorPrincialOscuro: #006f54;
+$colorPrincipalMedio: #00916e;
+$colorPrincipalClaro: #00ffc11f;
+$colorBlanco: #fff;
+$colorNegro: #000000;
+$bRadius: 32px;
+
+//Universal
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    height: auto;
+    width: auto;
+    padding: 3px;
+    scroll-behavior: smooth;
+    background-color: $colorPrincipalClaro;
+}
+
+/* Header */
+
+
+/* Footer */
+
+footer {
+    width: auto;
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: $colorPrincialOscuro;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.barra {
+    padding-top: 15px;
+}
+
+.barra li{
+    list-style: none;
+}
+
+.barra ul li a {
+    color: $colorNegro;
+    text-decoration: none;
+}
+
+.barra a:hover {
+    background-color: $colorBlanco;
+}
+
+.footerRedes {
+    font-size: 20px;
+    letter-spacing: 15px;
+}
+.fa-brands {
+    padding: 5px;
+    border: 1px solid $colorNegro;
+    box-shadow: 0 0 5px $colorNegro;
+    border-radius: $bRadius;
+    text-align: center;
+    padding-left: 20px;
+    color: $colorNegro !important;
+}
+.footerRedes i:hover {
+    background-color: $colorBlanco;
+}
+.footerCopy {
+    color: $colorNegro;
+    font-size: 16px;
+}
