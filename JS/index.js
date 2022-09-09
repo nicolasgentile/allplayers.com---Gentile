@@ -9,7 +9,30 @@ let cantidadProducto3 = 1;
 const btn = document.querySelector ('#btnCalcular');
 const pResult = document.querySelector ('#result');
 
-btn.addEventListener('click', sumarPreciosProductos);
+
+// Desafio Clase 6
+const productBtn = document.querySelector ('#btnProduct');
+const dStock = document.querySelector ('#stock');
+
+let product = ['Blue Protocol', 'Star Citizen', 'Diablo 4', 'Lost Soul Aside', 'Hollow Knght: Silksong', 'Dead Island 2', 'Stalker 2'];
+
+productBtn.addEventListener ('click', mostrarProductos);
+
+function mostrarProductos () {
+
+    for (const producto of product) {
+        console.log (producto);
+        /* pStock.innerText = '-->' + producto; (Imprime el ultimo valor no mas)*/
+    }
+    for (let i = 0; i < product.length; i++) {
+        console.log ("Producto: "+ i + " --> "+ product[i]);
+        dStock.innerHTML = "Producto: "+ i + " --> "+ product[i] + "<br/>";
+    }
+}
+
+// Fin desafio clase 6
+
+btn.addEventListener ('click', sumarPreciosProductos);
 
 function sumarPreciosProductos (event) {
 
@@ -51,7 +74,7 @@ function sumarPreciosProductos (event) {
     }
 
     const sumaTotal = totalProducto1 + totalProducto2 + totalProducto3;
-    pResult.innerText = "El total de la compra es: " + sumaTotal;
+    pResult.innerText = 'El total de la compra es: ' + sumaTotal;
 }
 
 
