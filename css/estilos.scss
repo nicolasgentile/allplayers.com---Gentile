@@ -9,6 +9,9 @@ $colorPrincipalClaro: #00ffc11f;
 $colorBlanco: #fff;
 $colorNegro: #000000;
 $bRadius: 32px;
+$sm: 16px;
+$md: 18px;
+$lg: 20px;
 
 //Universal
 * {
@@ -26,7 +29,141 @@ body {
     background-color: $colorPrincipalClaro;
 }
 
-/* Header */
+/* ------------------------ Header ------------------------------*/
+
+.inactive {
+    display: none;
+}
+
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: $colorPrincialOscuro;
+    border-bottom: 1px solid $colorNegro;
+}
+.menu {
+    display: none;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fa-ghost {
+    padding-top: 7px;
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
+    font-size: $lg;
+}
+.fa-ghost:hover {
+    color: $colorNegro;
+}
+.logoText {
+    color: $colorNegro;
+    text-shadow: 0 0 10px $colorNegro;
+}
+.players {
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
+}
+
+.navbar-left ul, .navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.navbar-left {
+    display: flex;
+}
+.navbar-left ul {
+    margin-left: 12px;
+}
+.navbar-left ul li a, .navbar-right ul li a {
+    text-decoration: none;
+    color: $colorNegro;
+    border: 1px solid $colorNegro;
+    box-shadow: 0 0 5px $colorNegro;
+    padding: 5px;
+    border-radius: $bRadius;
+    margin: 10px;
+}
+.navbar-left ul li a:hover, .navbar-right ul li a:hover {
+    background-color: $colorBlanco;
+}
+.navbar-email {
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
+    cursor: pointer;
+    font-size: $sm;
+    margin-right: 12px;
+}
+.navbar-email:hover {
+    color: $colorNegro;
+    text-shadow: 0 0 10px $colorNegro;
+}
+.navbar-shopping-cart {
+    position: relative;
+    cursor: pointer;
+}
+.navbar-shopping-cart div {
+    width: 9px;
+    height: 9px;
+    background-color: $colorBlanco;
+    color: $colorNegro;
+    text-shadow: 0 0 10px $colorNegro;
+    border-radius: $bRadius;
+    font-size: $sm;
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-menu {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    background: $colorPrincialOscuro;
+    width: 130px;
+    height: auto;
+    border: 1px solid $colorNegro;
+    border-radius: $bRadius;
+    padding: 20px 20px 0 20px;
+}
+.desktop-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li {
+    text-align: end;   
+}
+.desktop-menu ul li:nth-child(1), .desktop-menu ul li:nth-child(2) {
+    font-weight: bold;    
+}
+.desktop-menu ul li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid $colorNegro;  
+}
+.desktop-menu ul li:last-child a {
+    color: $colorNegro;    
+    font-size: $sm;
+}
+.desktop-menu ul li a {
+    color: $colorNegro;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
 
 //Indez p sotck
 
@@ -38,7 +175,7 @@ body {
     border: 1px solid $colorPrincialOscuro;
 }
 
-/* Footer */
+/* ------------------------ Footer ------------------------------*/
 
 footer {
     width: auto;
@@ -87,4 +224,22 @@ footer {
 .footerCopy {
     color: $colorNegro;
     font-size: 16px;
+}
+
+
+
+
+
+
+@media (max-width: 800px) {
+/* ------------------------ Header ------------------------------*/
+    .menu {
+        display: block;
+    }
+    .navbar-left ul {
+        display: none;
+    }
+    .navbar-email {
+        display: none;
+    }
 }

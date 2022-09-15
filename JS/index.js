@@ -1,16 +1,84 @@
 alert('Vinculado');
 
-let precioProducto1 = 500;
-let cantidadProducto1 = 1;
-let precioProducto2 = 800;
-let cantidadProducto2 = 2;
-let precioProducto3 = 1500;
-let cantidadProducto3 = 1;
-const btn = document.querySelector ('#btnCalcular');
-const pResult = document.querySelector ('#result');
+/*--------------------- original code -------------------------*/
+/*------------------------- Login -----------------------------*/
+const menuEmail = document.querySelector('.navbar-email');
+const desktopMenu = document.querySelector('.desktop-menu');
+
+menuEmail.addEventListener('click', toggleDesktopMenu);
+
+function toggleDesktopMenu() {
+    desktopMenu.classList.toggle('inactive');
+}
+/*-------------------------------------------------------------*/
+
+/*--------------------- 1° Pre Entrega-------------------------*/
+
+const btnShend = document.querySelector ('#btnShend'); //Mandar producto al carrito
+const shippedProducts = document.querySelector ('#shippedProducts');
+const btnCalculateCost = document.querySelector ('#btnCalculateCost'); //Calcular costo
+const totalCost = document.querySelector ('#totalCost');
+
+btnShend.addEventListener ('click', addElement);
+btnCalculateCost.addEventListener ('click', calculateTotalCost);
+
+class ProductoShopping {
+    constructor (nombre, cantidad, precio) {
+        this.nombre = nombre.toUpperCase(); 
+        this.cantidad = cantidad;
+        this. precio = precio;
+    }
+    productCost  = () => this.cantidad * this.precio;
+};
+
+function addElement () {
+    let addNumber = parseInt (prompt("Coloque la cantidad de productos a comprar = D"));
+    let productoAlCarro = [];
+    for (let i = 0; i < addNumber; i++) {
+        let nombre = prompt ("Ingrese el nombre del producto");
+        let cantidad = parseInt(prompt ("Ingrese la cantidad del producto que quiere adquirir"));
+        let precio = parseFloat(prompt ("Ingrese el precio del producto, no haga descuento ; )"));
+        let productoEnCarro = new ProductoShopping (
+            nombre,
+            cantidad,
+            precio
+        );
+        productoAlCarro.push(productoEnCarro);
+    }
+    for (const productName of productoAlCarro) {
+        shippedProducts.innerHTML += 'Producto ' + productName.nombre + "<br/>";
+    }
+    return productoAlCarro;
+};
 
 
-// Desafio Clase 6
+function calculateTotalCost (productoAlCarro) {
+    let total = 0;
+    for (let x of productoAlCarro) {
+        total = total + x.productCost ();
+    }
+    totalCost.innerHTML += 'El costo total de los productos en el carrito es de: $ ' + total + '.' + "<br/>";
+    return total;
+};
+
+/*--------------------- Desafios-------------------------*/
+
+// Desafio Clase 6 y 7
+
+/*---------------------Agregar producto-------------------------*/
+
+const addProd = document.querySelector ('#btnAddProduct');
+
+addProd.addEventListener ('click', addProduct);
+
+function addProduct () {
+    let name = prompt ('Ingrese el nombre del nuevo producto');
+    product.push(name);
+    alert ('Se agrego: ' + name);
+};
+
+/*---------------------Stock-------------------------*/
+
 const productBtn = document.querySelector ('#btnProduct');
 const dStock = document.querySelector ('#stock');
 
@@ -20,61 +88,10 @@ productBtn.addEventListener ('click', mostrarProductos);
 
 function mostrarProductos () {
 
-    for (const producto of product) {
-        console.log (producto);
-        /* pStock.innerText = '-->' + producto; (Imprime el ultimo valor no mas)*/
-    }
     for (let i = 0; i < product.length; i++) {
         console.log ("Producto: "+ i + " --> "+ product[i]);
-        dStock.innerHTML = "Producto: "+ i + " --> "+ product[i] + "<br/>";
+        dStock.innerHTML += "Producto: "+ i + " --> "+ product[i] + "<br/>";
     }
-}
-
-// Fin desafio clase 6
-
-btn.addEventListener ('click', sumarPreciosProductos);
-
-function sumarPreciosProductos (event) {
-
-    let totalProducto1 = 0;
-    let totalProducto2 = 0;
-    let totalProducto3 = 0;
-    let sumaPrecioProducto1 = 0;
-    let sumaPrecioProducto2 = 0;
-    let sumaPrecioProducto3 = 0;
-
-    if (cantidadProducto1 == 1) {
-        totalProducto1 = precioProducto1;
-    } 
-    else {
-        for (let i = 1; i < cantidadProducto1; i++) {
-            sumaPrecioProducto1 = precioProducto1 + precioProducto1;
-        }
-        totalProducto1 = sumaPrecioProducto1;
-    }
-
-    if (cantidadProducto2 == 1) {
-        totalProducto2 = precioProducto2;
-    } 
-    else {
-        for (let i = 1; i < cantidadProducto2; i++) {
-            sumaPrecioProducto2 = precioProducto2 + precioProducto2;
-        }
-        totalProducto2 = sumaPrecioProducto2;
-    }
-
-    if (cantidadProducto3 == 1) {
-        totalProducto3 = precioProducto3;
-    } 
-    else {
-        for (let i = 1; i < cantidadProducto3; i++) {
-            sumaPrecioProducto3 = precioProducto3 + precioProducto3;
-        }
-        totalProducto3 = sumaPrecioProducto3;
-    }
-
-    const sumaTotal = totalProducto1 + totalProducto2 + totalProducto3;
-    pResult.innerText = 'El total de la compra es: ' + sumaTotal;
 }
 
 

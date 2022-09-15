@@ -12,6 +12,7 @@
 
     <meta name="description" content="Venta de juegos de PC, equipos, accesorios, componentes!">
     <meta name="keywords" content="">
+
     <link rel="stylesheet" href="./css/normalize.css" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -22,80 +23,91 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- <a class="navbar-brand" href="#">Logo + Nombre</a> -->
+        <nav class="headerNav">
+            <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+
+            <div class="navbar-left">
             <div class="logo">
-              <spam class="logoImagen"><a href="./index.html"><i class="fa-solid fa-ghost"></i></a></spam>
-              <p class="logoText">All <span class="players">Players!</span></p>
+                <spam class="logoImagen"><a href="./index.html"><i class="fa-solid fa-ghost"></i></a></spam>
+                <p class="logoText">All <span class="players">Players!</span></p>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Productos
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./pages/juegosPC.html">Juegos PC</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./pages/equipos.html">Equipos</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./pages/accesorios.html">Accesorios</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/calculadora.html"> Calculadora </a>
-                </li>
-              </ul>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="./pages/juegosPC.html">Juegos PC</a>
+                    </li>
+                    <li>
+                        <a href="./pages/equipos.html">Equipos Gamers</a>
+                    </li>
+                    <li>
+                        <a href="./pages/accesorios.html">Accesorios</a>
+                    </li>
+                </ul>
             </div>
-            <a class="navbar-brand" href="#">Login</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Carrito</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </nav>
+
+            <div class="navbar-right">
+                <ul>
+                    <li class="navbar-email">messirve@example.com</li>
+                    <li class="navbar-shopping-cart">
+                        <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+                        <div>2</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="desktop-menu inactive">
+                <ul>
+                    <li>
+                        <a href="/" class="title">My orders</a>
+                    </li>
+                    <li>
+                        <a href="/" >My account</a>
+                    </li>
+                    <li>
+                        <a href="/" class="title">Sing out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
+
     <figure class="migaja">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-          </ol>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
         </nav>
-      </figure>
+    </figure>
+
     <main>
         <div> <!--Imagen de fondo-->
             <h1>Titulo</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero culpa numquam consectetur enim nam deleniti, debitis voluptatum, totam ipsum laborum commodi omnis esse nulla aliquam? Magni sed minima provident?</p>
         </div>
     </main>
-    <section>
-      <h3>Simulacion de carrito:</h3>
-      <p>Producto 1 - precio $ 500 - cantidad 1</p>
-      <p>Producto 2 - precio $ 800 - cantidad 2</p>
-      <p>Producto 3 - precio $ 1500 - cantidad 1</p>
-      <p>(Esto va a ir en unas estilo cards y de alguna forma lo pasare al carro)</p>
-      <button type="button" id="btnCalcular">Calcular total de la compra</button>
-      <p id="result"></p>
+
+    <section class="preDelivery">
+        <article class="buttons">
+            <button type="button" id="btnShend">Mandar producto al carrito ; )</button>
+            <div id="shippedProducts"></div>
+            <button type="button" id="btnCalculateCost">Calcuar precio final $$</button>
+            <p id="totalCost"></p>
+            <button type="button" id=""> ? </button>
+            <div id=""></div>
+        </article>
     </section>
+
+    <section>
+        <h2>Agregar producto al stock</h2>
+        <button type="button" id="btnAddProduct">Agregar producto</button>
+    </section>
+
     <article>
-      <button type="button" id="btnProduct">Ver productos</button>
-      <div class="probando" id="stock"></div>
+        <h3>Ver stock</h3>
+        <button type="button" id="btnProduct">Ver productos</button>
+        <div class="probando" id="stock"></div>
     </article>
     <section>
         <p>Contenido, imagenes, videos, etc.</p>
