@@ -9,10 +9,10 @@
     <meta name="city" content="Rosario">
     <meta name="country" content="Argentina">
     <meta name="doc-type" content="Web Page">
-
     <meta name="description" content="Venta de juegos de PC, equipos, accesorios, componentes!">
     <meta name="keywords" content="">
-
+    <!-- <link rel="shortcut icon" href="./imagen/iconFavorite.webp" type="image/x-icon" />
+ -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -164,19 +164,33 @@
 
     <main>
         <div> <!--Imagen de fondo-->
-            <h1>Titulo</h1>
+            <h1>Players !</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero culpa numquam consectetur enim nam deleniti, debitis voluptatum, totam ipsum laborum commodi omnis esse nulla aliquam? Magni sed minima provident?</p>
         </div>
     </main>
 
+    <section class="sectionForm">
+        <div class="container formContact"> <!--abs-center-->
+            <form id="form" action="" method="post" enctype="text/plain">
+                <h3 class="tituloFormulario">Agregar producto al carro</h3>
+                <input type="text" class="form-control" id="inputId" placeholder="Ingrese ID del producto" required>
+                <input type="text" class="form-control" id="inputName" placeholder="Ingrese nombre del producto" required>
+                <input type="text" class="form-control" id="inputAmount" placeholder="Ingrese cantidad requerida" required>
+                <input type="text" class="form-control" id="inputPrice" placeholder="Ingrese precio del producto" required>
+                <button type="submit" class="btn btn-warning">Enviar</button>
+                <button type="reset" class="btn btn-warning">Borrar todo</button>
+            </form>    
+        </div>
+        <div id="productsContainer" class="container productsGree"></div>
+    </section>
+
     <section class="preDelivery">
         <article class="buttons">
-            <button type="button" id="btnShend">Mandar producto al carrito ; )</button>
-            <div id="shippedProducts"></div>
-            <button type="button" id="btnCalculateCost">Calcuar precio final $$</button>
-            <p id="totalCost"></p>
+            <button type="button" class="btn btn-warning" id="btnCalculateCost">Calcuar precio final $$</button>
+            <p class="totalCar" id="totalCost"></p>
         </article>
     </section>
+
 
     <section>
         <h2>Agregar producto al stock</h2>

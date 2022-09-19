@@ -60,18 +60,17 @@ function toggleCarritoAside () {
 
 /*--------------------- Desafios, entregas------------------------*/
 
-const btnShend = document.querySelector ('#btnShend'); //Mandar producto al carrito
-const shippedProducts = document.querySelector ('#shippedProducts');
-const btnCalculateCost = document.querySelector ('#btnCalculateCost'); //Calcular costo
-const totalCost = document.querySelector ('#totalCost');
-let productoAlCarro = [];
+let productToCart = [];
+let form;
+let inputId;
+let inputName;
+let inputAmount;
+let inputPrice;
+let productsContainer;
 
-
-btnShend.addEventListener ('click', addElement);
-btnCalculateCost.addEventListener ('click', calculateTotalCost);
-
-class ProductoShopping {
-    constructor (nombre, cantidad, precio) {
+class Producto {
+    constructor (id, nombre, cantidad, precio) { 
+        this.id = id; 
         this.nombre = nombre.toUpperCase(); 
         this.cantidad = cantidad;
         this. precio = precio;
@@ -79,41 +78,88 @@ class ProductoShopping {
     productCost  = () => this.cantidad * this.precio;
 }
 
-function addElement () {
-    let addNumber = parseInt (prompt("Coloque la cantidad de productos a comprar = D"));
-    for (let i = 0; i < addNumber; i++) {
-        let nombre = prompt ("Ingrese el nombre del producto");
-        let cantidad = parseInt (prompt ("Ingrese la cantidad del producto que quiere adquirir"));
-        let precio = parseFloat (prompt ("Ingrese el precio del producto, no haga descuento ; )"));
-        let productoEnCarro = new ProductoShopping (
-            nombre,
-            cantidad,
-            precio
-        );
-        productoAlCarro.push (productoEnCarro);
-    }
-    for (const productCar of productoAlCarro) {
-        let space = document.createElement("div");
-        let varId = 0;
-        space.className = "col-md-4 mt-10";
-        space.id = `space-${space + 1}`;
+function initializeElements () {
+    form = document.getElementById ('form');
+    inputId = document.getElementById ('inputId');
+    inputName = document.getElementById ('inputName');
+    inputAmount = document.getElementById ('inputAmount');
+    inputPrice = document.getElementById ('inputPrice');
+    productsContainer = document.getElementById ('productsContainer');
+}
+
+function initializeEvents () {
+    form.onsubmit = (event) => validateForm (event);
+}
+
+function validateForm (event) {
+    event.preventDefault();
+    let productId = inputId.value;
+    let productName = inputName.value;
+    let productAmount = parseInt (inputAmount.value);
+    let productPrice = parseFloat (inputPrice.value);
+    let productInCart = new Producto (
+        productId,
+        productName,
+        productAmount,
+        productPrice
+    );
+    
+    productToCart.push (productInCart);
+
+    form.reset ();
+
+    paintProducts ();
+}
+
+function paintProducts () {
+    productsContainer.innerHTML= " ";
+    productToCart.forEach ((objectProduct) =>{
+        let space = document.createElement ("div");
+        space.className = "col-md-4 mt-10"
+        space.id = `space-${objectProduct.id}`
         space.innerHTML = 
-        `<div class="card-columns">
-            <div class="card bg-warning> 
-                <p class="card-text"> Nombre: <b>${productCar.nombre}</b></p>
-                <p class="card-text"> Cantidad: ${productCar.cantidad}</p>
-                <p class="card-text"> Precio: <b>${productCar.precio * productCar.cantidad}</b></p>
+        `<div class="card exampleCard">
+            <div class="card-body exampleCardBody>
+                <p class="card-text pCard"> ID: <b>${objectProduct.id}</b></p>
+                <p class="card-text pCard"> Nombre: <b>${objectProduct.nombre}</b></p>
+                <p class="card-text pCard"> Cantidad: ${objectProduct.cantidad}</p>
+                <p class="card-text pCard"> Precio: <b>${objectProduct.precio * objectProduct.cantidad}</b></p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger" id="btnDelete-${objectProduct.id}">Delete</button>
             </div>
         </div>`;
 
-        shippedProducts.append(space);
-    }
-    return productoAlCarro;
+        productsContainer.append (space);
+
+        let btnDelete = document.getElementById (`btnDelete-${objectProduct.id}`);
+        
+        btnDelete.onclick = () => deleteProduct (objectProduct.id); 
+    });
 }
+
+function deleteProduct (idProduct) {
+    let deleteSpace = document.getElementById (`space-${idProduct.id}`);
+    deleteSpace.remove();
+}
+
+function main () {
+    initializeElements();
+    initializeEvents ();
+}
+
+main();
+
+/*---------------------Calcular costo del carro-------------------------*/
+
+btnCalculateCost = document.querySelector ('#btnCalculateCost'); //Calcular costo
+totalCost = document.querySelector ('#totalCost');
+
+btnCalculateCost.addEventListener ('click', calculateTotalCost);
 
 function calculateTotalCost () {
     let total = 0;
-    for (let x of productoAlCarro) {
+    for (let x of productToCart) {
         total = total + x.productCost ();
     }
     totalCost.innerHTML += 'El costo total de los productos en el carrito es de: $ ' + total + '.' + "<br/>";
@@ -148,5 +194,44 @@ function mostrarProductos () {
         dStock.innerHTML += "Producto: "+ i + " --> "+ product[i] + "<br/>";
     }
 }
+
+
+
+/* btnShend = document.querySelector ('#btnShend'); //Mandar producto al carrito desde promps
+shippedProducts = document.querySelector ('#shippedProducts'); */
+
+/* btnShend.addEventListener ('click', addElement); */
+
+/* function addElement () {
+    let addNumber = parseInt (prompt("Coloque la cantidad de productos a comprar = D"));
+    for (let i = 0; i < addNumber; i++) {
+        let nombre = prompt ("Ingrese el nombre del producto");
+        let cantidad = parseInt (prompt ("Ingrese la cantidad del producto que quiere adquirir"));
+        let precio = parseFloat (prompt ("Ingrese el precio del producto, no haga descuento ; )"));
+        let productoEnCarro = new ProductoShopping (
+            nombre,
+            cantidad,
+            precio
+        );
+        productoAlCarro.push (productoEnCarro);
+    }
+    for (const productCar of productoAlCarro) {
+        let space = document.createElement("div");
+        space.className = "col-md-4 mt-10";
+        space.id = `space-${space + 1}`;
+        space.innerHTML = 
+        `<div class="card-columns">
+            <div class="card bg-warning> 
+                <p class="card-text"> Nombre: <b>${productCar.nombre}</b></p>
+                <p class="card-text"> Cantidad: ${productCar.cantidad}</p>
+                <p class="card-text"> Precio: <b>${productCar.precio * productCar.cantidad}</b></p>
+            </div>
+        </div>`;
+
+        shippedProducts.append(space);
+    }
+    return productoAlCarro;
+} */
+
 
 

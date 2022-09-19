@@ -297,7 +297,103 @@ body {
     padding-bottom: 8px;
 }
 
-//Indez p sotck
+//Desafios
+.sectionForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.formContact {
+    background-color: $colorPrincialOscuro;
+    height: 370px;
+    width: 30%;
+    padding: 10px;
+    border: 1px $colorNegro solid;
+    box-shadow: 0px 0px 10px $colorNegro;
+    border-radius: 25px;
+    margin: 15px;
+}
+.form-control {
+    color: $colorBlanco !important;
+    background-color: $colorNegro !important;
+    border: 1px solid $colorBlanco !important;
+    box-shadow: 0px 0px 10px $colorBlanco;
+}
+.tituloFormulario {
+    color: $colorNegro;
+    text-align: center;
+    padding: 3px;
+    text-decoration: underline;
+    text-shadow: 0 0 5px $colorNegro;
+}
+.form-control {
+    background-color: transparent;
+    padding: 7px;
+    margin: 10px;
+    border: 1px $colorNegro solid;
+    width: 90%;
+}
+.btn {
+    background-color: $colorNegro;
+    padding: 7px;
+    margin: 10px;
+    border: 1px $colorBlanco solid;
+    box-shadow: 0px 0px 10px $colorBlanco;
+    color: $colorBlanco;
+}
+.btn:hover {
+    color:$colorNegro;
+    background-color: $colorBlanco;
+    border: 2px $colorNegro solid;
+}
+.btn:focus {
+    color:$colorNegro;
+    background-color: $colorBlanco;
+    border: 2px $colorNegro solid;
+}
+.productsGree {
+    background-color: $colorPrincialOscuro;
+    height: auto;
+    width: 60%;
+    padding: 10px;
+    border: 1px $colorNegro solid;
+    box-shadow: 0px 0px 10px $colorNegro;
+    border-radius: 25px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.exampleCard {
+    background-color: $colorPrincipalMedio;
+    border: 1px solid $colorBlanco !important;
+    box-shadow: 0px 0px 10px $colorBlanco;
+}
+.exampleCardBody {
+    border: 1px solid $colorNegro !important;
+    box-shadow: 0px 0px 10px $colorNegro;
+}
+.pCard {
+    padding: 10px;
+    color: $colorBlanco !important;
+    background-color: $colorNegro !important;
+    border: 1px solid $colorBlanco !important;
+    box-shadow: 0px 0px 10px $colorBlanco;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+.totalCar {
+    margin-top: 12px;
+    border: 1px solid $colorNegro;
+    color: $colorNegro;
+    text-shadow: 0 0 5px $colorNegro;
+}
 
 .probando {
     width: 100;
