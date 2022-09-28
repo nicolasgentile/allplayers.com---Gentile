@@ -20,72 +20,165 @@
     <title>Juegos PC!</title>
 </head>
 <body>
-  <header>
-    <nav class="headerNav">
-      <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+    <header>
+        <nav class="headerNav">
+            <img src="../icons/icon_menu.svg" alt="menu" class="menu">
 
-      <div class="navbar-left">
-        <div class="logo">
-          <spam class="logoImagen"><a href="../index.html"><i class="fa-solid fa-ghost"></i></a></spam>
-          <p class="logoText">All <span class="players">Players!</span></p>
+            <div class="navbar-left">
+                <div class="logo">
+                <spam class="logoImagen"><a href="../index.html"><i class="fa-solid fa-ghost"></i></a></spam>
+                <p class="logoText">All <span class="players">Players!</span></p>
+            </div>
+                <ul>
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Juegos PC</a>
+                    </li>
+                    <li>
+                        <a href="./equipos.html">Equipos Gamers</a>
+                    </li>
+                    <li>
+                    <a href="./accesorios.html">Accesorios</a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="navbar-right">
+                <ul>
+                    <li class="navbar-email">messirve@example.com</li>
+                    <li class="navbar-shopping-cart">
+                        <img src="../icons/icon_shopping_cart.svg" alt="shopping cart">
+                        <div id="cardCounter">0</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="desktop-menu inactive">
+                <ul>
+                    <li>
+                        <a href="/" class="title">My orders</a>
+                    </li>
+                    <li>
+                        <a href="/" >My account</a>
+                    </li>
+                    <li>
+                        <a href="/" class="title">Sing out</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="mobile-menu inactive">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="./pages/juegosPC.html">Juegos PC</a>
+                    </li>
+                    <li>
+                        <a href="./pages/equipos.html">Equipos Gamers</a>
+                    </li>
+                    <li>
+                        <a href="./pages/accesorios.html">Accesorios</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="/">My orders</a>
+                    </li>
+                    <li>
+                        <a href="/">My account</a>
+                    </li>
+                </ul>
+        
+                <ul>
+                    <li>
+                        <a href="/" class="email">example@example.com</a>
+                    </li>
+                    <li>
+                        <a href="/" class="sign-out">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carro-->
+    <aside class="product-detail inactive">
+        <div class="title-container">
+            <img src="../icons/flechita.svg" alt="arrow">
+            <p class="title">My order</p>
         </div>
-          <ul>
-              <li>
-                  <a href="../index.html">Home</a>
-              </li>
-              <li>
-                  <a href="#">Juegos PC</a>
-              </li>
-              <li>
-                  <a href="./equipos.html">Equipos Gamers</a>
-              </li>
-              <li>
-                <a href="./accesorios.html">Accesorios</a>
-            </li>
-          </ul>
-      </div>
-
-      <div class="navbar-right">
-          <ul>
-              <li class="navbar-email">messirve@example.com</li>
-              <li class="navbar-shopping-cart">
-                  <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-                  <div>2</div>
-              </li>
-          </ul>
-      </div>
-
-      <div class="desktop-menu inactive">
-          <ul>
-              <li>
-                  <a href="/" class="title">My orders</a>
-              </li>
-              <li>
-                  <a href="/" >My account</a>
-              </li>
-              <li>
-                  <a href="/" class="title">Sing out</a>
-              </li>
-          </ul>
-      </div>
-    </nav>
-
-  </header>
+        
+        <div class="my-order-content">
+<!--             <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/12858127/pexels-photo-12858127.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="img">
+                </figure>
+                <p>Hojita</p>
+                <p>$ 30,00</p>
+                <img src="../icons/icon_close.png" alt="close">
+            </div> -->
+<!--             <div class="order">
+                <p>
+                    <span>Total</span>
+                </p>
+                <div>$ 00.00</div>
+            </div> -->
+        </div>
+        <div class="order">
+            <p>
+                <span>Total</span>
+            </p>
+            <div id="totalPrice">$ 00.00</div>
+        </div>
+        <button class="primary-button checkout">
+            Checkout
+        </button>
+        <button id="emptyCard" class="primary-button empty">
+            Empty
+        </button>
+    </aside>
 
     <figure class="migaja">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Juegos PC</li>
-          </ol>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Juegos PC</li>
+            </ol>
         </nav>
-      </figure>
+    </figure>
+
     <main>
         <div> <!--Imagen de fondo-->
-            <h1>Titulo</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error vero culpa numquam consectetur enim nam deleniti, debitis voluptatum, totam ipsum laborum commodi omnis esse nulla aliquam? Magni sed minima provident?</p>
+            <h1>Juegos PC</h1>
+            <p>Bienvenido player! En esta seccion estan los mejore juegos de PC que se pueden conseguir, y al mejor precio! No te los pierdas!</p>
         </div>
     </main>
+
+    <section class="main-container">
+        <div class="cards-container">
+<!--             <div class="product-card">
+                <img src="Imagen del proucto" alt="">
+                <div class="product-info">
+                    <div>
+                    <p>$ Precio producto</p>
+                    <p>Nombre producto</p>
+                    </div>
+                    <figure class="buttons">
+                        <button type="button" class="btn btn-warning" id="btnCalculateCost">Calcuar precio final $$</button>
+                    </figure>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    <article class="card">
+        <div class="my-order-content">
+
+        </div>
+    </article>
 
     <footer>
         <div clas="footerNav">

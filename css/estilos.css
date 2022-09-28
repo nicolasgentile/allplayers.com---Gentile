@@ -260,7 +260,7 @@ body {
   font-weight: bold;
 }
 
-.order p:nth-child(2) {
+.order div:nth-child(2) {
   text-align: end;
   font-weight: bold;
 }
@@ -313,10 +313,62 @@ body {
   font-weight: bold;
 }
 
-.shopping-cart img:nth-child(4) {
+.shopping-cart figure button:nth-child(4) {
+  width: 10px;
   padding-bottom: 8px;
 }
 
+/* ------------------ Product List ---------------------*/
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 240px);
+  gap: 26px;
+  place-content: center;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: 240px;
+}
+
+.product-card img {
+  width: 240px;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.product-info figure {
+  margin: 0;
+}
+
+.product-info figure img {
+  width: 35px;
+  height: 35px;
+}
+
+.product-info div p:nth-child(1) {
+  font-weight: bold;
+  font-size: var(--md);
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.product-info div p:nth-child(2) {
+  font-size: var(--sm);
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--very-light-pink);
+}
+
+/* ------------------ Desafios ---------------------*/
 .sectionForm {
   display: flex;
   flex-direction: row;
@@ -485,6 +537,19 @@ footer {
   font-size: 16px;
 }
 
+@media (max-width: 640px) {
+  /* Product List */
+  .card-container {
+    grid-template-columns: repeat(auto-fil, 140px);
+  }
+  .product-card {
+    width: 140px;
+  }
+  .product-card img {
+    width: 140px;
+    height: 140px;
+  }
+}
 @media (max-width: 800px) {
   /* ------------------------ Header ------------------------------*/
   .menu {

@@ -3,12 +3,17 @@ alert('Vinculado');
 /*--------------------- original code -------------------------*/
 
 /*------------------------- Login -----------------------------*/
+
 const menuEmail = document.querySelector ('.navbar-email');
 const desktopMenu = document.querySelector ('.desktop-menu');
+
 /*------------------------- Mobile menu -----------------------------*/
+
 const menuHamIcon = document.querySelector ('.menu');
 const mobileMenu = document.querySelector ('.mobile-menu');
+
 /*------------------------- Carrito Aside -----------------------------*/
+
 const menuCarritoIcon = document.querySelector ('.navbar-shopping-cart');
 const aside = document.querySelector ('.product-detail');
 
@@ -56,11 +61,288 @@ function toggleCarritoAside () {
     aside.classList.toggle ('inactive'); //Actividad individual aside
 }
 
+/*------------------------- Product list -----------------------------*/
+
+const cardsContainer = document.querySelector ('.cards-container');
+
+const productList = [];
+
+productList.push ({
+    id: 1,
+    name: 'Resident Evil 3',
+    price: 2106,
+    image: 'https://cdn-products.eneba.com/resized-products/g7QZ7MReBTAiWCuyToeFHm6IkUK0j3CAnGJVBqIjccw_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 2,
+    name: 'Ciberpunk 2077',
+    price: 3981,
+    image: 'https://cdn-products.eneba.com/resized-products/e4F2hNGTi5VjMHS29as0dZaQpCPfP6jbQzhPu_GAQ_U_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 3,
+    name: 'Monster Hunter: World',
+    price: 2146,
+    image: 'https://cdn-products.eneba.com/resized-products/a4fbbfd448440942d3a787dc88a0c1cd_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 4,
+    name: 'Devil May Cry 5',
+    price: 1591,
+    image: 'https://cdn-products.eneba.com/resized-products/Jn6PP_XEj4puvACs9w8WecI8XbGg7CpHJAvlzofpsrk_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 5,
+    name: 'Red Dead Redemtion 2',
+    price: 4987,
+    image: 'https://cdn-products.eneba.com/resized-products/6M1qP76B-j6vdX0T4bFCHgJeX99MaKBpXFxbpif1MqY_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 6,
+    name: 'Shadow of the Tomb Raider',
+    price: 2606,
+    image: 'https://cdn-products.eneba.com/resized-products/2b2a4aa095bd0eade2854c4b929642a9_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 7,
+    name: 'Battlefield V',
+    price: 2240,
+    image: 'https://cdn-products.eneba.com/resized-products/78f848d8773a629a3123e790884b0ed4_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 8,
+    name: 'Grand Theft Auto V',
+    price: 1850,
+    image: 'https://cdn-products.eneba.com/resized-products/s29Db6ZBVLneuD0t66qnYRamvGDP3p8chLz-3IomxcU_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 9,
+    name: 'The Witcher 3: Wild Hunt',
+    price: 2308,
+    image: 'https://cdn-products.eneba.com/resized-products/0c87248bbfac2866d434aad19334b24b_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 10,
+    name: 'Minecraft: Java Edition',
+    price: 4193,
+    image: 'https://cdn-products.eneba.com/resized-products/Xl1yxdDvS66HrBBK3wVM03JuBzJrcXmJyz91if0l2NA_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 11,
+    name: 'Temtem',
+    price: 14248,
+    image: 'https://cdn-products.eneba.com/resized-products/TrFkCZK_DA74UI8oCE_RhNud-vZ8st2phptDX1v_Mxw_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 12,
+    name: 'DOOM',
+    price: 800,
+    image: 'https://cdn-products.eneba.com/resized-products/exjg5qwydaz7mzyrfvxn_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 13,
+    name: 'Rocket League',
+    price: 104990,
+    image: 'https://cdn-products.eneba.com/resized-products/edkpgyqgfsxyiby9pyj5_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 14,
+    name: 'Crysis 3',
+    price: 2875,
+    image: 'https://cdn-products.eneba.com/resized-products/eiwqS8P_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 15,
+    name: 'Max Payne 3',
+    price: 3186,
+    image: 'https://cdn-products.eneba.com/resized-products/067e0818bd36d71e109c0eb18b67c887_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 16,
+    name: 'Borderlands 3',
+    price: 2606,
+    image: 'https://cdn-products.eneba.com/resized-products/EPLPatyhOck36hY82-MGKXpRc1X_IC-oWVRlzqCExWU_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 17,
+    name: 'The Elder Scrolls V: Skyrim',
+    price: 2308,
+    image: 'https://cdn-products.eneba.com/resized-products/yakiwtuy29tu0atooopm_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 18,
+    name: 'Dark Soul III',
+    price: 7298,
+    image: 'https://cdn-products.eneba.com/resized-products/BjdEY6u_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 19,
+    name: 'A Way Out',
+    price: 2600,
+    image: 'https://cdn-products.eneba.com/resized-products/znal9oqmtkqzedjd3x2p_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 20,
+    name: 'Mount & Blade II: Bannerlord',
+    price: 6884,
+    image: 'https://cdn-products.eneba.com/resized-products/AAZeDL4z_CSRpykH8w-zsfPIc8AIPQwe9iw_CE4OxHM_350x200_1x-0.jpeg'
+});
+productList.push ({
+    id: 21,
+    name: 'Far cry 3',
+    price: 1680,
+    image: 'https://cdn-products.eneba.com/resized-products/clqp8A2_350x200_1x-0.jpg'
+});
+productList.push ({
+    id: 22,
+    name: 'Batman: Arkha City',
+    price: 500,
+    image: 'https://cdn-products.eneba.com/resized-products/nemib0kgnbo6i0rmlavm_350x200_1x-0.jpg'
+});
+/* productList.push ({
+    name: '',
+    price: ,
+    image: ''
+}); */
+
+
+//Pintar los productos en el HTML
+
+productList.forEach((product) => {
+    const productCard = document.createElement ('div');
+    productCard.classList.add ('product-card');
+
+    const productImg = document.createElement ('img');
+    productImg.setAttribute('src', product.image);
+
+    const productInfo = document.createElement ('div');
+    productInfo.classList.add ('product-info');
+
+    const productInfoDiv = document.createElement ('div');
+    
+    const productPrice = document.createElement ('p');
+    productPrice.innerText = '$' + product.price;
+    
+    const productName = document.createElement ('p');
+    productName.innerText = product.name;
+    
+    productInfoDiv.appendChild (productPrice);
+    productInfoDiv.appendChild (productName);
+
+    const productInfoFigure = document.createElement ('figure');
+    productInfoFigure.classList.add ('button');
+    productInfoFigure.innerHTML = `
+    <button type="button" class="btn btn-warning" id="btnAdd-${product.id}">Add <i class="fas fa-shopping-cart"></i></button>`
+
+    productInfo.appendChild (productInfoDiv);
+    productInfo.appendChild (productInfoFigure);
+
+    productCard.appendChild (productImg);
+    productCard.appendChild (productInfo);
+    
+    cardsContainer.appendChild (productCard)
+
+    const btnAddProduct = document.getElementById (`btnAdd-${product.id}`);
+    btnAddProduct.addEventListener ('click', () => {
+        addToCard(product.id)
+    })
+})
+
+let card = [];
+
+const addToCard = (productId) => {
+    const item = productList.find ((prod) => prod.id === productId);
+    card.push(item);
+    updateCart();
+}
+
+const myOrderContent = document.querySelector ('.my-order-content');
+const cardCounter = document.getElementById ('cardCounter');
+const totalPrice = document.getElementById ('totalPrice');
+
+const updateCart = () => {
+
+    myOrderContent.innerHTML = ' '
+
+    card.forEach ((prod) => {
+
+        const shoppingCart = document.createElement ('div');
+        shoppingCart.classList.add ('shopping-cart');
+
+        const shoppingFigure = document.createElement ('figure');
+
+        const shoppingFigureImage = document.createElement ('img');
+        shoppingFigureImage.setAttribute ('src', prod.image);
+
+        shoppingFigure.appendChild (shoppingFigureImage);
+
+        const shoppingPName = document.createElement ('p');
+        shoppingPName.innerText = prod.name;
+
+        const shoppingPPrice = document.createElement ('p');
+        shoppingPPrice.innerText = prod.price;
+
+        const shoppingImageIcon = document.createElement ('figure');
+        shoppingImageIcon.classList.add ('button');
+        shoppingImageIcon.innerHTML = `
+        <button onclick="btnDelete(${prod.id})" class="btn btn-warning"><i class="fas fa-trash-alt></i></button>`
+
+        shoppingCart.appendChild (shoppingFigure);
+        shoppingCart.appendChild (shoppingPName);
+        shoppingCart.appendChild (shoppingPPrice);
+        shoppingCart.appendChild (shoppingImageIcon);
+
+        myOrderContent.appendChild (shoppingCart);
+
+        localStorage.setItem ('card', JSON.stringify(card));
+    })
+
+    cardCounter.innerText = card.length;
+    totalPrice.innerText = card.reduce((acc, prod) => acc + prod.price, 0);
+}
+
+const btnDelete = (prodId) => {
+    const item = card.find((prod) => prod.id === prodId)
+    const indice = card.indexOf(item);
+    card.splice(indice, 1);
+    localStorage.removeItem (indice);
+    updateCart ();
+}
+
+const btnEmptyCard = document.getElementById ('emptyCard');
+
+btnEmptyCard.addEventListener ('click', () => {
+    card.length = 0;
+    localStorage.clear ();
+    updateCart ();
+})
+
+document.addEventListener ('DOMContentLoaded', () => {
+    if (localStorage.getItem ('card')) {
+        card = JSON.parse(localStorage.getItem ('card'));
+        updateCart ();
+    }
+});
+
+/* <div class="shopping-cart">
+                <figure>
+                    <img src="https://images.pexels.com/photos/12858127/pexels-photo-12858127.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="img">
+                </figure>
+                <p>Hojita</p>
+                <p>$ 30,00</p>
+                <img src="./icons/icon_close.png" alt="close">
+            </div> */
+
+
+
 /*-------------------------------------------------------------*/
 
 /*--------------------- Desafios, entregas------------------------*/
 
-let productToCart = [];
+
+/*---------------------Formulario, pintar producto-------------------------*/
+
+/* let productToCart = [];
 let form;
 let inputId;
 let inputName;
@@ -148,11 +430,11 @@ function main () {
     initializeEvents ();
 }
 
-main();
+main(); */
 
 /*---------------------Calcular costo del carro-------------------------*/
 
-btnCalculateCost = document.querySelector ('#btnCalculateCost'); //Calcular costo
+/* btnCalculateCost = document.querySelector ('#btnCalculateCost'); //Calcular costo
 totalCost = document.querySelector ('#totalCost');
 
 btnCalculateCost.addEventListener ('click', calculateTotalCost);
@@ -164,11 +446,11 @@ function calculateTotalCost () {
     }
     totalCost.innerHTML += 'El costo total de los productos en el carrito es de: $ ' + total + '.' + "<br/>";
     return total;
-}
+} */
 
 /*---------------------Agregar producto a Stock-------------------------*/
 
-const addProd = document.querySelector ('#btnAddProduct');
+/* const addProd = document.querySelector ('#btnAddProduct');
 
 addProd.addEventListener ('click', addProduct);
 
@@ -177,10 +459,10 @@ function addProduct () {
     product.push(name);
     alert ('Se agrego: ' + name);
 };
-
+ */
 /*---------------------Stock-------------------------*/
 
-const productBtn = document.querySelector ('#btnProduct');
+/* const productBtn = document.querySelector ('#btnProduct');
 const dStock = document.querySelector ('#stock');
 
 let product = ['Blue Protocol', 'Star Citizen', 'Diablo 4', 'Lost Soul Aside', 'Hollow Knght: Silksong', 'Dead Island 2', 'Stalker 2'];
@@ -193,9 +475,10 @@ function mostrarProductos () {
         console.log ("Producto: "+ i + " --> "+ product[i]);
         dStock.innerHTML += "Producto: "+ i + " --> "+ product[i] + "<br/>";
     }
-}
+} */
 
 
+/*---------------------Codigo viejo-------------------------*/
 
 /* btnShend = document.querySelector ('#btnShend'); //Mandar producto al carrito desde promps
 shippedProducts = document.querySelector ('#shippedProducts'); */
