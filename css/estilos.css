@@ -318,6 +318,53 @@ body {
   padding-bottom: 8px;
 }
 
+/* ------------------ Breadcrumb ---------------------*/
+.migaja {
+  padding: 5px;
+  width: 50%;
+  margin-bottom: 0;
+}
+
+.breadcrumb {
+  padding: 0;
+  background-color: transparent;
+}
+
+.breadcrumb-item.active {
+  color: #006f54;
+  text-shadow: 0 0 5px #000000;
+}
+
+.breadcrumb a {
+  color: #006f54;
+  text-shadow: 0 0 5px #000000;
+}
+
+/* ------------------ Main Index ---------------------*/
+.jumbotron {
+  background-image: url(https://w0.peakpx.com/wallpaper/438/10/HD-wallpaper-video-game-charactors-game-warrior-video-charctors.jpg);
+  /* border-image: $borderRadius; */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.jumbotron .titulo {
+  color: #000000;
+  padding: 3px;
+  text-align: center;
+  text-decoration: underline;
+  animation: bounce;
+  animation-duration: 2s;
+  text-shadow: 0 0 5px #fff;
+}
+.jumbotron .subIndex {
+  padding: 3px;
+  text-align: center;
+  text-decoration: underline;
+  color: #000000;
+  text-shadow: 0 0 5px #fff;
+}
+
 /* ------------------ Product List ---------------------*/
 .cards-container {
   display: grid;

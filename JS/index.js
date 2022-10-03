@@ -27,9 +27,11 @@ function toggleDesktopMenu () { //Si abrimos el menu se cierra el carrito
     
     const isAsideClosed = aside.classList.contains('inactive');
 
-    if (!isAsideClosed) { //Comparacion con aside
+    !isAsideClosed && aside.classList.add ('inactive');
+
+    /* if (!isAsideClosed) { //Comparacion con aside
         aside.classList.add ('inactive');
-    }
+    } */
     
     desktopMenu.classList.toggle ('inactive'); //Actividad individual Desktop Menu
 }
@@ -38,26 +40,31 @@ function toggleMobileMenu () {
     
     const isAsideClosed = aside.classList.contains('inactive');
 
-    if (!isAsideClosed) { //Comparacion con aside
+    !isAsideClosed && aside.classList.add ('inactive'); //Reduccion de un condicional
+
+    /* if (!isAsideClosed) { //Comparacion con aside
         aside.classList.add ('inactive');
-    }
+    } */
 
     mobileMenu.classList.toggle ('inactive'); //Actividad individual Mobile Menu
 }
 
 function toggleCarritoAside () { 
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-    const isDesltopMenuClosed = desktopMenu.classList.contains('inactive');
+    const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
 
+    !isMobileMenuClosed && mobileMenu.classList.add ('inactive'); //Reduccion de un condicional
 
-    if (!isMobileMenuClosed) { //Comparacion con el Mobile Menu
+    /* if (!isMobileMenuClosed) { //Comparacion con el Mobile Menu
         mobileMenu.classList.add ('inactive');
-    }
+    } */
 
-    if (!isDesltopMenuClosed) { //Comparacion con el Desktop Menu
+    !isDesktopMenuClosed && desktopMenu.classList.add ('inactive'); //Reduccion de un condicional
+
+    /* if (!isDesktopMenuClosed) { //Comparacion con el Desktop Menu
         desktopMenu.classList.add ('inactive');
     }
-
+ */
     aside.classList.toggle ('inactive'); //Actividad individual aside
 }
 
@@ -305,7 +312,7 @@ const btnDelete = (prodId) => {
     const item = card.find((prod) => prod.id === prodId)
     const indice = card.indexOf(item);
     card.splice(indice, 1);
-    localStorage.removeItem (indice);
+    if (card.length === 0) localStorage.clear();
     updateCart ();
 }
 
