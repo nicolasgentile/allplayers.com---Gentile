@@ -27,11 +27,7 @@ function toggleDesktopMenu () { //Si abrimos el menu se cierra el carrito
     
     const isAsideClosed = aside.classList.contains('inactive');
 
-    !isAsideClosed && aside.classList.add ('inactive');
-
-    /* if (!isAsideClosed) { //Comparacion con aside
-        aside.classList.add ('inactive');
-    } */
+    !isAsideClosed && aside.classList.add ('inactive'); //Reduccion de un condicional - Comparacion con aside
     
     desktopMenu.classList.toggle ('inactive'); //Actividad individual Desktop Menu
 }
@@ -40,11 +36,7 @@ function toggleMobileMenu () {
     
     const isAsideClosed = aside.classList.contains('inactive');
 
-    !isAsideClosed && aside.classList.add ('inactive'); //Reduccion de un condicional
-
-    /* if (!isAsideClosed) { //Comparacion con aside
-        aside.classList.add ('inactive');
-    } */
+    !isAsideClosed && aside.classList.add ('inactive'); //Reduccion de un condicional - Comparacion con aside
 
     mobileMenu.classList.toggle ('inactive'); //Actividad individual Mobile Menu
 }
@@ -53,18 +45,10 @@ function toggleCarritoAside () {
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
     const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
 
-    !isMobileMenuClosed && mobileMenu.classList.add ('inactive'); //Reduccion de un condicional
+    !isMobileMenuClosed && mobileMenu.classList.add ('inactive'); //Reduccion de un condicional - Comparacion con el Mobile Menu
 
-    /* if (!isMobileMenuClosed) { //Comparacion con el Mobile Menu
-        mobileMenu.classList.add ('inactive');
-    } */
+    !isDesktopMenuClosed && desktopMenu.classList.add ('inactive'); //Reduccion de un condicional - Comparacion con el Desktop Menu
 
-    !isDesktopMenuClosed && desktopMenu.classList.add ('inactive'); //Reduccion de un condicional
-
-    /* if (!isDesktopMenuClosed) { //Comparacion con el Desktop Menu
-        desktopMenu.classList.add ('inactive');
-    }
- */
     aside.classList.toggle ('inactive'); //Actividad individual aside
 }
 
@@ -206,12 +190,6 @@ productList.push ({
     price: 500,
     image: 'https://cdn-products.eneba.com/resized-products/nemib0kgnbo6i0rmlavm_350x200_1x-0.jpg'
 });
-/* productList.push ({
-    name: '',
-    price: ,
-    image: ''
-}); */
-
 
 //Pintar los productos en el HTML
 
@@ -252,12 +230,25 @@ productList.forEach((product) => {
     const btnAddProduct = document.getElementById (`btnAdd-${product.id}`);
     btnAddProduct.addEventListener ('click', () => {
         addToCard(product.id)
+        Toastify({
+            text: "You added " + product.name,
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", 
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
     })
 })
 
 let card = [];
 
-const addToCard = (productId) => {
+const addToCard = (productId) => { //Agregar producto al carrito + toas
     const item = productList.find ((prod) => prod.id === productId);
     card.push(item);
     updateCart();
@@ -308,20 +299,46 @@ const updateCart = () => {
     totalPrice.innerText = card.reduce((acc, prod) => acc + prod.price, 0);
 }
 
-const btnDelete = (prodId) => {
-    const item = card.find((prod) => prod.id === prodId)
-    const indice = card.indexOf(item);
-    card.splice(indice, 1);
-    if (card.length === 0) localStorage.clear();
-    updateCart ();
+const btnDelete = (prodId) => { // Eliminar producto del carrito + Sweet
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You will not buy this spectacular game?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+            'Deleted!',
+            'Your product has been deleted.',
+            'success'
+            )
+            const item = card.find((prod) => prod.id === prodId)
+            const indice = card.indexOf(item);
+            card.splice(indice, 1);
+            if (card.length === 0) localStorage.clear();
+            updateCart ();
+        }
+    })
+    
 }
 
 const btnEmptyCard = document.getElementById ('emptyCard');
 
-btnEmptyCard.addEventListener ('click', () => {
+btnEmptyCard.addEventListener ('click', () => { //Vaciar carrito
     card.length = 0;
     localStorage.clear ();
     updateCart ();
+    Swal.fire({
+        title: 'are you a player?',
+        text: 'You removed all the products! = (',
+        imageUrl: 'https://media0.giphy.com/media/4KFQL2rzYs1nG/200w.webp?cid=ecf05e47vrq652g679e1c5e14jt6w3eu1kayeqlslzgftw72&rid=200w.webp&ct=g',
+        imageWidth: 300,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+    })
 })
 
 document.addEventListener ('DOMContentLoaded', () => {
