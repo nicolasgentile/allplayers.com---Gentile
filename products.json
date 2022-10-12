@@ -1,0 +1,134 @@
+[
+    {
+        "id":1,
+        "name":"Resident Evil 3",
+        "price":2106,
+        "image":"https://cdn-products.eneba.com/resized-products/g7QZ7MReBTAiWCuyToeFHm6IkUK0j3CAnGJVBqIjccw_350x200_1x-0.jpeg"
+    },
+    {
+        "id":2,
+        "name":"Ciberpunk 2077",
+        "price":3981,
+        "image":"https://cdn-products.eneba.com/resized-products/e4F2hNGTi5VjMHS29as0dZaQpCPfP6jbQzhPu_GAQ_U_350x200_1x-0.jpeg"
+    },
+    {
+        "id":3,
+        "name":"Monster Hunter: World",
+        "price":2146,
+        "image":"https://cdn-products.eneba.com/resized-products/a4fbbfd448440942d3a787dc88a0c1cd_350x200_1x-0.jpg"
+    },
+    {
+        "id":4,
+        "name":"Devil May Cry 5",
+        "price":1591,
+        "image":"https://cdn-products.eneba.com/resized-products/Jn6PP_XEj4puvACs9w8WecI8XbGg7CpHJAvlzofpsrk_350x200_1x-0.jpeg"
+    },
+    {
+        "id":5,
+        "name":"Red Dead Redemtion 2",
+        "price":4987,
+        "image":"https://cdn-products.eneba.com/resized-products/6M1qP76B-j6vdX0T4bFCHgJeX99MaKBpXFxbpif1MqY_350x200_1x-0.jpeg"
+    },
+    {
+        "id":6,
+        "name":"Shadow of the Tomb Raider",
+        "price":2606,
+        "image":"https://cdn-products.eneba.com/resized-products/2b2a4aa095bd0eade2854c4b929642a9_350x200_1x-0.jpg"
+    },
+    {
+        "id":7,
+        "name":"Battlefield V",
+        "price":2240,
+        "image":"https://cdn-products.eneba.com/resized-products/78f848d8773a629a3123e790884b0ed4_350x200_1x-0.jpg"
+    },
+    {
+        "id":8,
+        "name":"Grand Theft Auto V",
+        "price":1850,
+        "image":"https://cdn-products.eneba.com/resized-products/s29Db6ZBVLneuD0t66qnYRamvGDP3p8chLz-3IomxcU_350x200_1x-0.jpeg"
+    },
+    {
+        "id":9,
+        "name":"The Witcher 3: Wild Hunt",
+        "price":2308,
+        "image":"https://cdn-products.eneba.com/resized-products/0c87248bbfac2866d434aad19334b24b_350x200_1x-0.jpg"
+    },
+    {
+        "id":10,
+        "name":"Minecraft: Java Edition",
+        "price":4193,
+        "image":"https://cdn-products.eneba.com/resized-products/Xl1yxdDvS66HrBBK3wVM03JuBzJrcXmJyz91if0l2NA_350x200_1x-0.jpeg"
+    },
+    {
+        "id":11,
+        "name":"Temtem",
+        "price":14248,
+        "image":"https://cdn-products.eneba.com/resized-products/TrFkCZK_DA74UI8oCE_RhNud-vZ8st2phptDX1v_Mxw_350x200_1x-0.jpeg"
+    },
+    {
+        "id":12,
+        "name":"DOOM",
+        "price":800,
+        "image":"https://cdn-products.eneba.com/resized-products/exjg5qwydaz7mzyrfvxn_350x200_1x-0.jpg"
+    },
+    {
+        "id":13,
+        "name":"Rocket League",
+        "price":104990,
+        "image":"https://cdn-products.eneba.com/resized-products/edkpgyqgfsxyiby9pyj5_350x200_1x-0.jpg"
+    },
+    {
+        "id":14,
+        "name":"Crysis 3",
+        "price":2875,
+        "image":"https://cdn-products.eneba.com/resized-products/eiwqS8P_350x200_1x-0.jpg"
+    },
+    {
+        "id":15,
+        "name":"Max Payne 3",
+        "price":3186,
+        "image":"https://cdn-products.eneba.com/resized-products/067e0818bd36d71e109c0eb18b67c887_350x200_1x-0.jpg"
+    },
+    {
+        "id":16,
+        "name":"Borderlands 3",
+        "price":2606,
+        "image":"https://cdn-products.eneba.com/resized-products/EPLPatyhOck36hY82-MGKXpRc1X_IC-oWVRlzqCExWU_350x200_1x-0.jpeg"
+    },
+    {
+        "id":17,
+        "name":"The Elder Scrolls V: Skyrim",
+        "price":2308,
+        "image":"https://cdn-products.eneba.com/resized-products/yakiwtuy29tu0atooopm_350x200_1x-0.jpg"
+    },
+    {
+        "id":18,
+        "name":"Dark Soul III",
+        "price":7298,
+        "image":"https://cdn-products.eneba.com/resized-products/BjdEY6u_350x200_1x-0.jpg"
+    },
+    {
+        "id":19,
+        "name":"A Way Out",
+        "price":2600,
+        "image":"https://cdn-products.eneba.com/resized-products/znal9oqmtkqzedjd3x2p_350x200_1x-0.jpg"
+    },
+    {
+        "id":20,
+        "name":"Mount & Blade II: Bannerlord",
+        "price":6884,
+        "image":"https://cdn-products.eneba.com/resized-products/AAZeDL4z_CSRpykH8w-zsfPIc8AIPQwe9iw_CE4OxHM_350x200_1x-0.jpeg"
+    },
+    {
+        "id":21,
+        "name":"Far cry 3",
+        "price":1680,
+        "image":"https://cdn-products.eneba.com/resized-products/clqp8A2_350x200_1x-0.jpg"
+    },
+    {
+        "id":22,
+        "name":"Batman: Arkha City",
+        "price":500,
+        "image":"https://cdn-products.eneba.com/resized-products/nemib0kgnbo6i0rmlavm_350x200_1x-0.jpg"
+    }
+]

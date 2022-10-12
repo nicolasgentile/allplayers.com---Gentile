@@ -1,7 +1,3 @@
-alert('Vinculado');
-
-/*--------------------- original code -------------------------*/
-
 /*------------------------- Login -----------------------------*/
 
 const menuEmail = document.querySelector ('.navbar-email');
@@ -56,9 +52,9 @@ function toggleCarritoAside () {
 
 const cardsContainer = document.querySelector ('.cards-container');
 
-const productList = [];
+let productList = [];
 
-productList.push ({
+/* productList.push ({
     id: 1,
     name: 'Resident Evil 3',
     price: 2106,
@@ -189,62 +185,78 @@ productList.push ({
     name: 'Batman: Arkha City',
     price: 500,
     image: 'https://cdn-products.eneba.com/resized-products/nemib0kgnbo6i0rmlavm_350x200_1x-0.jpg'
-});
+}); */
+
+//LLamando a JSON
+
+function consultarJson () {
+    fetch ('../products.json')
+    .then((Response) => Response.json())
+    .then((info) => {
+        console.log(info)
+        productList = [...info]
+        pain()
+    })
+    .catch((error) => console.log(error));
+}
+consultarJson();
 
 //Pintar los productos en el HTML
 
-productList.forEach((product) => {
-    const productCard = document.createElement ('div');
-    productCard.classList.add ('product-card');
+function pain() {
+    productList.forEach((product) => {
+        const productCard = document.createElement ('div');
+        productCard.classList.add ('product-card');
 
-    const productImg = document.createElement ('img');
-    productImg.setAttribute('src', product.image);
+        const productImg = document.createElement ('img');
+        productImg.setAttribute('src', product.image);
 
-    const productInfo = document.createElement ('div');
-    productInfo.classList.add ('product-info');
+        const productInfo = document.createElement ('div');
+        productInfo.classList.add ('product-info');
 
-    const productInfoDiv = document.createElement ('div');
-    
-    const productPrice = document.createElement ('p');
-    productPrice.innerText = '$' + product.price;
-    
-    const productName = document.createElement ('p');
-    productName.innerText = product.name;
-    
-    productInfoDiv.appendChild (productPrice);
-    productInfoDiv.appendChild (productName);
+        const productInfoDiv = document.createElement ('div');
+        
+        const productPrice = document.createElement ('p');
+        productPrice.innerText = '$' + product.price;
+        
+        const productName = document.createElement ('p');
+        productName.innerText = product.name;
+        
+        productInfoDiv.appendChild (productPrice);
+        productInfoDiv.appendChild (productName);
 
-    const productInfoFigure = document.createElement ('figure');
-    productInfoFigure.classList.add ('button');
-    productInfoFigure.innerHTML = `
-    <button type="button" class="btn btn-warning" id="btnAdd-${product.id}">Add <i class="fas fa-shopping-cart"></i></button>`
+        const productInfoFigure = document.createElement ('figure');
+        productInfoFigure.classList.add ('button');
+        productInfoFigure.innerHTML = `
+        <button type="button" class="btn btn-warning" id="btnAdd-${product.id}">Add <i class="fas fa-shopping-cart"></i></button>`
 
-    productInfo.appendChild (productInfoDiv);
-    productInfo.appendChild (productInfoFigure);
+        productInfo.appendChild (productInfoDiv);
+        productInfo.appendChild (productInfoFigure);
 
-    productCard.appendChild (productImg);
-    productCard.appendChild (productInfo);
-    
-    cardsContainer.appendChild (productCard)
+        productCard.appendChild (productImg);
+        productCard.appendChild (productInfo);
+        
+        cardsContainer.appendChild (productCard)
 
-    const btnAddProduct = document.getElementById (`btnAdd-${product.id}`);
-    btnAddProduct.addEventListener ('click', () => {
-        addToCard(product.id)
-        Toastify({
-            text: "You added " + product.name,
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "bottom", // `top` or `bottom`
-            position: "right", 
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-            },
-            onClick: function(){} // Callback after click
-        }).showToast();
+        const btnAddProduct = document.getElementById (`btnAdd-${product.id}`);
+        btnAddProduct.addEventListener ('click', () => {
+            addToCard(product.id)
+            Toastify({
+                text: "You added " + product.name,
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", 
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function(){} // Callback after click
+            }).showToast();
+        })
     })
-})
+}
 
 let card = [];
 
@@ -348,16 +360,8 @@ document.addEventListener ('DOMContentLoaded', () => {
     }
 });
 
-/* <div class="shopping-cart">
-                <figure>
-                    <img src="https://images.pexels.com/photos/12858127/pexels-photo-12858127.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="img">
-                </figure>
-                <p>Hojita</p>
-                <p>$ 30,00</p>
-                <img src="./icons/icon_close.png" alt="close">
-            </div> */
-
-
+/* let listaProductosJSON = JSON.stringify(productList);
+localStorage.setItem("arrayProductos", listaProductosJSON); */
 
 /*-------------------------------------------------------------*/
 

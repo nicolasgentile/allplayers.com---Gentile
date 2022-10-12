@@ -7,6 +7,7 @@
 }
 
 body {
+  box-sizing: border-box;
   height: auto;
   width: auto;
   padding: 3px;
@@ -60,7 +61,7 @@ body {
   text-shadow: 0 0 10px #fff;
 }
 
-.navbar-left ul, .navbar-right ul {
+.navbar-right ul {
   list-style: none;
   padding: 0;
   margin: 0px;
@@ -73,11 +74,7 @@ body {
   display: flex;
 }
 
-.navbar-left ul {
-  margin-left: 12px;
-}
-
-.navbar-left ul li a, .navbar-right ul li a {
+.navbar-right ul li a {
   text-decoration: none;
   color: #000000;
   border: 1px solid #000000;
@@ -87,7 +84,7 @@ body {
   margin: 10px;
 }
 
-.navbar-left ul li a:hover, .navbar-right ul li a:hover {
+.navbar-right ul li a:hover {
   background-color: #fff;
 }
 
@@ -217,7 +214,6 @@ body {
   box-sizing: border-box;
   position: absolute;
   right: 0;
-  /* border-radius: 5px; */
 }
 
 .title-container {
@@ -316,28 +312,6 @@ body {
 .shopping-cart figure button:nth-child(4) {
   width: 10px;
   padding-bottom: 8px;
-}
-
-/* ------------------ Breadcrumb ---------------------*/
-.migaja {
-  padding: 5px;
-  width: 50%;
-  margin-bottom: 0;
-}
-
-.breadcrumb {
-  padding: 0;
-  background-color: transparent;
-}
-
-.breadcrumb-item.active {
-  color: #006f54;
-  text-shadow: 0 0 5px #000000;
-}
-
-.breadcrumb a {
-  color: #006f54;
-  text-shadow: 0 0 5px #000000;
 }
 
 /* ------------------ Main Index ---------------------*/

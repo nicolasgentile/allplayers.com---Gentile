@@ -12,8 +12,10 @@
     <meta name="description" content="Venta de juegos de PC, equipos, accesorios, componentes!">
     <meta name="keywords" content="">
     <!-- <link rel="shortcut icon" href="./imagen/iconFavorite.webp" type="image/x-icon" />
- -->
+    -->
     <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!--Boostrap-->
@@ -27,24 +29,10 @@
             <img src="./icons/icon_menu.svg" alt="menu" class="menu">
 
             <div class="navbar-left">
-            <div class="logo">
-                <spam class="logoImagen"><a href="./index.html"><i class="fa-solid fa-ghost"></i></a></spam>
-                <p class="logoText">All <span class="players">Players!</span></p>
-            </div>
-                <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="./pages/juegosPC.html">Juegos PC</a>
-                    </li>
-                    <li>
-                        <a href="./pages/equipos.html">Equipos Gamers</a>
-                    </li>
-                    <li>
-                        <a href="./pages/accesorios.html">Accesorios</a>
-                    </li>
-                </ul>
+                <div class="logo">
+                    <spam class="logoImagen"><a href="./index.html"><i class="fa-solid fa-ghost"></i></a></spam>
+                    <p class="logoText">All <span class="players">Players!</span></p>
+                </div>
             </div>
 
             <div class="navbar-right">
@@ -74,20 +62,6 @@
             <div class="mobile-menu inactive">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="./pages/juegosPC.html">Juegos PC</a>
-                    </li>
-                    <li>
-                        <a href="./pages/equipos.html">Equipos Gamers</a>
-                    </li>
-                    <li>
-                        <a href="./pages/accesorios.html">Accesorios</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
                         <a href="/">My orders</a>
                     </li>
                     <li>
@@ -106,50 +80,23 @@
             </div>
         </nav>
     </header>
-        <!-- Carro-->
-        <aside class="product-detail inactive">
-            <div class="title-container">
-                <img src="../icons/flechita.svg" alt="arrow">
-                <p class="title">My order</p>
-            </div>
+    <!-- Carro-->
+    <aside class="product-detail inactive">
+        <div class="title-container">
+            <img src="../icons/flechita.svg" alt="arrow">
+            <p class="title">My order</p>
+        </div>
             
-            <div class="my-order-content">
-    <!--             <div class="shopping-cart">
-                    <figure>
-                        <img src="https://images.pexels.com/photos/12858127/pexels-photo-12858127.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="img">
-                    </figure>
-                    <p>Hojita</p>
-                    <p>$ 30,00</p>
-                    <img src="../icons/icon_close.png" alt="close">
-                </div> -->
-    <!--             <div class="order">
-                    <p>
-                        <span>Total</span>
-                    </p>
-                    <div>$ 00.00</div>
-                </div> -->
-            </div>
-            <div class="order">
-                <p>
-                    <span>Total</span>
-                </p>
-                <div id="totalPrice">$ 00.00</div>
-            </div>
-            <button class="primary-button checkout">
-                Checkout
-            </button>
-            <button id="emptyCard" class="primary-button empty">
-                Empty
-            </button>
-        </aside>
-
-    <figure class="migaja">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Home</li>
-            </ol>
-        </nav>
-    </figure>
+        <div class="my-order-content"></div>
+        <div class="order">
+            <p>
+                <span>Total</span>
+            </p>
+            <div id="totalPrice">$ 00.00</div>
+        </div>
+        <button class="primary-button checkout">Checkout</button>
+        <button id="emptyCard" class="primary-button empty">Empty</button>
+    </aside>
 
     <main>
         <div class="jumbotron jumbotronIndex">
@@ -159,6 +106,13 @@
             <p class="textoMainIndex wow animate__animated animate__jackInTheBox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa possimus voluptas id necessitatibus quis minima labore culpa, illo itaque perferendis velit, eos sint dolorum inventore ullam. Laborum nesciunt ducimus dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, assumenda tempore! Voluptate quae quo doloribus, ducimus, commodi recusandae inventore perferendis nobis magni repellendus qui? In earum amet ea dignissimos cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque iste recusandae veritatis eveniet eligendi consequatur omnis temporibus sint, provident facilis alias. Eum distinctio voluptatem fugit voluptatibus inventore quam itaque delectus?.</p>
         </div>
     </main>
+
+    <section class="main-container">
+        <div class="cards-container"></div>
+    </section>
+    <article class="card">
+        <div class="my-order-content"></div>
+    </article>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -208,7 +162,6 @@
         </article>
     </section -->> 
 
-
     <footer>
         <div clas="footerNav">
             <nav class="barra">
@@ -228,6 +181,8 @@
         </div>
     </footer>
 
+    <!-- Toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!--JS Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

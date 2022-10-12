@@ -22,6 +22,7 @@ $lg: 20px;
 }
 
 body {
+    box-sizing: border-box;
     height: auto;
     width: auto;
     padding: 3px;
@@ -71,7 +72,7 @@ body {
     text-shadow: 0 0 10px $colorBlanco;
 }
 
-.navbar-left ul, .navbar-right ul {
+.navbar-right ul {
     list-style: none;
     padding: 0;
     margin: 0px;
@@ -82,10 +83,8 @@ body {
 .navbar-left {
     display: flex;
 }
-.navbar-left ul {
-    margin-left: 12px;
-}
-.navbar-left ul li a, .navbar-right ul li a {
+
+.navbar-right ul li a {
     text-decoration: none;
     color: $colorNegro;
     border: 1px solid $colorNegro;
@@ -94,7 +93,7 @@ body {
     border-radius: $bRadius;
     margin: 10px;
 }
-.navbar-left ul li a:hover, .navbar-right ul li a:hover {
+.navbar-right ul li a:hover {
     background-color: $colorBlanco;
 }
 .navbar-email {
@@ -212,7 +211,6 @@ body {
     box-sizing: border-box;
     position: absolute;
     right: 0;
-    /* border-radius: 5px; */
 }
 .title-container {
     display: flex;
@@ -296,26 +294,6 @@ body {
 .shopping-cart figure button:nth-child(4) {
     width: 10px;
     padding-bottom: 8px;
-}
-
-/* ------------------ Breadcrumb ---------------------*/
-
-.migaja {
-    padding: 5px;
-    width: 50%;
-    margin-bottom: 0;
-}
-.breadcrumb {
-    padding: 0;
-    background-color: transparent;
-}
-.breadcrumb-item.active {
-    color: $colorPrincialOscuro;
-    text-shadow: 0 0 5px $colorNegro;
-}
-.breadcrumb a {
-    color: $colorPrincialOscuro;
-    text-shadow: 0 0 5px $colorNegro;
 }
 
 /* ------------------ Main Index ---------------------*/
