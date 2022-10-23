@@ -10,9 +10,9 @@ body {
   box-sizing: border-box;
   height: auto;
   width: auto;
-  padding: 3px;
   scroll-behavior: smooth;
-  background-color: rgba(0, 255, 193, 0.1215686275);
+  /* background-color: $colorPrincipalClaro; */
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
 }
 
 /* ------------------------ Header ------------------------------*/
@@ -26,8 +26,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
-  background-color: #006f54;
-  border-bottom: 1px solid #000000;
+  /* background-color: $colorPrincialOscuro; */
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 0 5px #fff;
 }
 
 .menu {
@@ -88,12 +90,30 @@ body {
   background-color: #fff;
 }
 
+.identificationFormC {
+  display: flex;
+}
+
+.getInto {
+  width: 110px !important;
+  margin-top: 14px;
+  margin-right: 6px;
+}
+
+.singOut {
+  width: 100px !important;
+  margin-bottom: 18px !important;
+  margin-right: 20px;
+}
+
 .navbar-email {
   color: #fff;
   text-shadow: 0 0 10px #fff;
   cursor: pointer;
   font-size: 16px;
   margin-right: 12px;
+  padding-top: 25px;
+  padding-right: 15px;
 }
 
 .navbar-email:hover {
@@ -104,19 +124,20 @@ body {
 .navbar-shopping-cart {
   position: relative;
   cursor: pointer;
+  padding-top: 10px;
 }
 
 .navbar-shopping-cart div {
-  width: 9px;
-  height: 9px;
-  background-color: #fff;
-  color: #000000;
-  text-shadow: 0 0 10px #000000;
+  width: 13px;
+  height: 13px;
+  background-color: #000000;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
   border-radius: 32px;
   font-size: 16px;
   font-weight: bold;
   position: absolute;
-  top: -6px;
+  top: -2px;
   right: -3px;
   display: flex;
   justify-content: center;
@@ -126,12 +147,14 @@ body {
 /* --------------------- Desktop Menu ------------------------*/
 .desktop-menu {
   position: absolute;
-  top: 75px;
+  top: 72px;
   right: 60px;
-  background: #006f54;
-  width: 130px;
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+  width: 140px;
   height: auto;
   padding: 20px 20px 0 20px;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px #fff;
 }
 
 .desktop-menu ul {
@@ -141,88 +164,19 @@ body {
 }
 
 .desktop-menu ul li {
-  text-align: end;
-}
-
-.desktop-menu ul li:nth-child(1), .desktop-menu ul li:nth-child(2) {
-  font-weight: bold;
-}
-
-.desktop-menu ul li:last-child {
-  padding-top: 20px;
-  border-top: 1px solid #000000;
-}
-
-.desktop-menu ul li:last-child a {
-  color: #000000;
-  font-size: 16px;
-}
-
-.desktop-menu ul li a {
-  color: #000000;
-  text-decoration: none;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-/* --------------------- Mobile Menu ------------------------*/
-.mobile-menu {
-  position: absolute;
-  top: 75px;
-  padding: 24px;
-  background-color: #006f54;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: bold;
-}
-
-.mobile-menu ul {
-  padding: 0;
-  margin: 24px 0 0;
-  list-style: none;
-}
-
-.mobile-menu ul:nth-child(1) {
-  border-bottom: 1px solid #000000;
-}
-
-.mobile-menu ul li {
-  margin-bottom: 24px;
-}
-
-.email {
-  color: #fff !important;
-  text-shadow: 0 0 10px #fff;
-  font-size: 16px;
-  font-weight: 300 !important;
-}
-
-.sign-out {
-  font-size: 16px;
-  color: #000000 !important;
-  text-shadow: 0 0 10px #fff;
+  text-align: center;
 }
 
 /* ------------------ Aside (product detail) ---------------------*/
 .product-detail {
   width: 360px;
   padding: 0 24px;
-  background-color: #006f54;
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
   box-sizing: border-box;
   position: absolute;
   right: 0;
-}
-
-.title-container {
-  display: flex;
-}
-
-.title-container img {
-  transform: rotate(180deg);
-  margin-right: 14px;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px #fff;
 }
 
 .title {
@@ -238,7 +192,6 @@ body {
   grid-template-columns: auto 1fr;
   gap: 16px;
   align-items: center;
-  background-color: #006f54;
   margin-bottom: 24px;
   border-radius: 8px;
   padding: 0 24px;
@@ -271,7 +224,7 @@ body {
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
-  height: 50px;
+  height: 30px;
   margin-bottom: 5px;
 }
 
@@ -301,29 +254,61 @@ body {
 }
 
 .shopping-cart p:nth-child(2) {
-  color: #000000;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
 .shopping-cart p:nth-child(3) {
   font-size: 18px;
   font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
 }
 
-.shopping-cart figure button:nth-child(4) {
-  width: 10px;
-  padding-bottom: 8px;
+.sectionForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.formContact {
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+  height: auto;
+  width: 80%;
+  padding: 10px;
+  border: 1px #000000 solid;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 25px;
+  margin: 15px;
+}
+
+.form-control {
+  color: #fff;
+  background-color: #000000;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 10px #fff;
+  width: 90%;
+  padding: 7px;
+  margin: 10px;
+}
+
+.tituloFormulario {
+  color: #000000;
+  text-align: center;
+  padding: 3px;
+  text-decoration: underline;
+  text-shadow: 0 0 5px #fff;
 }
 
 /* ------------------ Main Index ---------------------*/
 .jumbotron {
   background-image: url(https://w0.peakpx.com/wallpaper/438/10/HD-wallpaper-video-game-charactors-game-warrior-video-charctors.jpg);
-  /* border-image: $borderRadius; */
   background-size: cover;
   background-position: center;
   color: #fff;
 }
 .jumbotron .titulo {
-  color: #000000;
+  color: #fff;
   padding: 3px;
   text-align: center;
   text-decoration: underline;
@@ -335,7 +320,7 @@ body {
   padding: 3px;
   text-align: center;
   text-decoration: underline;
-  color: #000000;
+  color: #fff;
   text-shadow: 0 0 5px #fff;
 }
 
@@ -350,6 +335,8 @@ body {
 
 .product-card {
   width: 240px;
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
 }
 
 .product-card img {
@@ -390,46 +377,6 @@ body {
 }
 
 /* ------------------ Desafios ---------------------*/
-.sectionForm {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.formContact {
-  background-color: #006f54;
-  height: 370px;
-  width: 30%;
-  padding: 10px;
-  border: 1px #000000 solid;
-  box-shadow: 0px 0px 10px #000000;
-  border-radius: 25px;
-  margin: 15px;
-}
-
-.form-control {
-  color: #fff !important;
-  background-color: #000000 !important;
-  border: 1px solid #fff !important;
-  box-shadow: 0px 0px 10px #fff;
-}
-
-.tituloFormulario {
-  color: #000000;
-  text-align: center;
-  padding: 3px;
-  text-decoration: underline;
-  text-shadow: 0 0 5px #000000;
-}
-
-.form-control {
-  background-color: transparent;
-  padding: 7px;
-  margin: 10px;
-  border: 1px #000000 solid;
-  width: 90%;
-}
-
 .btn {
   background-color: #000000;
   padding: 7px;
@@ -451,58 +398,13 @@ body {
   border: 2px #000000 solid;
 }
 
-.productsGree {
-  background-color: #006f54;
-  height: auto;
-  width: 60%;
+/* ------------------------ Carousel ------------------------------*/
+.carousel {
   padding: 10px;
-  border: 1px #000000 solid;
-  box-shadow: 0px 0px 10px #000000;
-  border-radius: 25px;
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
-.exampleCard {
-  background-color: #00916e;
-  border: 1px solid #fff !important;
-  box-shadow: 0px 0px 10px #fff;
-}
-
-.exampleCardBody {
-  border: 1px solid #000000 !important;
-  box-shadow: 0px 0px 10px #000000;
-}
-
-.pCard {
-  padding: 10px;
-  color: #fff !important;
-  background-color: #000000 !important;
-  border: 1px solid #fff !important;
-  box-shadow: 0px 0px 10px #fff;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.totalCar {
-  margin-top: 12px;
-  border: 1px solid #000000;
-  color: #000000;
-  text-shadow: 0 0 5px #000000;
-}
-
-.probando {
-  width: 100;
-  height: 200;
-  padding: 20px;
-  margin: 15px;
-  border: 1px solid #006f54;
+.card {
+  border: none;
 }
 
 /* ------------------------ Footer ------------------------------*/
@@ -512,9 +414,11 @@ footer {
   margin: 0;
   display: flex;
   flex-direction: row;
-  background-color: #006f54;
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
   justify-content: space-around;
   align-items: center;
+  border-top: 1px solid #fff;
+  box-shadow: 0 0 5px #fff;
 }
 
 .barra {
@@ -558,6 +462,7 @@ footer {
   font-size: 16px;
 }
 
+/* ------------------------ Media ------------------------------*/
 @media (max-width: 640px) {
   /* Product List */
   .card-container {
@@ -572,28 +477,21 @@ footer {
   }
 }
 @media (max-width: 800px) {
-  /* ------------------------ Header ------------------------------*/
-  .menu {
-    display: block;
-  }
-  .navbar-left ul {
-    display: none;
-  }
-  .navbar-email {
-    display: none;
-  }
-  .desktop-menu {
-    display: none;
-  }
   .product-detail {
     width: 100%;
   }
 }
-@media (min-width: 801px) {
-  /* ------------------------ Header ------------------------------*/
-  .mobile-menu {
-    display: none;
-  }
+/* ------------------------ Sweet ------------------------------*/
+.swal2-container.swal2-center > .swal2-popup {
+  background: #000000;
+  border: 1px solid #fff;
+  box-shadow: 0 0 5px #fff;
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+}
+
+.swal2-styled.swal2-confirm {
+  background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54) !important;
 }
 
 /*# sourceMappingURL=estilos.css.map */

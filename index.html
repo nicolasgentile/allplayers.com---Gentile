@@ -11,9 +11,7 @@
     <meta name="doc-type" content="Web Page">
     <meta name="description" content="Venta de juegos de PC, equipos, accesorios, componentes!">
     <meta name="keywords" content="">
-    <!-- <link rel="shortcut icon" href="./imagen/iconFavorite.webp" type="image/x-icon" />
-    -->
-    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- <link rel="shortcut icon" href="./imagen/iconFavorite.webp" type="image/x-icon" />-->
     <!-- Toastify-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--Font Awesome-->
@@ -21,12 +19,12 @@
     <!--Boostrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/estilos.css"/>
+    <link rel="stylesheet" href="./css/normalize.css" />
     <title>All Players!</title>
 </head>
 <body>
     <header>
         <nav class="headerNav">
-            <img src="./icons/icon_menu.svg" alt="menu" class="menu">
 
             <div class="navbar-left">
                 <div class="logo">
@@ -37,7 +35,15 @@
 
             <div class="navbar-right">
                 <ul>
-                    <li class="navbar-email">messirve@example.com</li>
+                    <div id="identificationContainer">
+                        <form id="identificationForm" class="identificationFormC">
+                            <input type="email" class="form-control" id="inputUsuario" placeholder="Ingrese su correo" required>
+                            <button type="submit" class="primary-button checkout getInto">Get into</button>
+                        </form>
+                    </div>
+                    <div id="userContainer" hidden>
+                        <p class="navbar-email email" id="userEmail"></p>
+                    </div>
                     <li class="navbar-shopping-cart">
                         <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
                         <div id="cardCounter">0</div>
@@ -48,45 +54,18 @@
             <div class="desktop-menu inactive">
                 <ul>
                     <li>
-                        <a href="/" class="title">My orders</a>
-                    </li>
-                    <li>
-                        <a href="/" >My account</a>
-                    </li>
-                    <li>
-                        <a href="/" class="title">Sing out</a>
+                        <button type="submit" class="primary-button singOut" id="exit">Sing out</button>
                     </li>
                 </ul>
             </div>
 
-            <div class="mobile-menu inactive">
-                <ul>
-                    <li>
-                        <a href="/">My orders</a>
-                    </li>
-                    <li>
-                        <a href="/">My account</a>
-                    </li>
-                </ul>
-        
-                <ul>
-                    <li>
-                        <a href="/" class="email">example@example.com</a>
-                    </li>
-                    <li>
-                        <a href="/" class="sign-out">Sign out</a>
-                    </li>
-                </ul>
-            </div>
         </nav>
     </header>
     <!-- Carro-->
     <aside class="product-detail inactive">
         <div class="title-container">
-            <img src="../icons/flechita.svg" alt="arrow">
             <p class="title">My order</p>
         </div>
-            
         <div class="my-order-content"></div>
         <div class="order">
             <p>
@@ -94,7 +73,19 @@
             </p>
             <div id="totalPrice">$ 00.00</div>
         </div>
-        <button class="primary-button checkout">Checkout</button>
+        <button id="checkout" class=primary-button checkout">Checkout</button>
+        <section class="sectionForm">
+            <div class="container formContact" id="formContact" hidden> 
+                <form id="form" action="" method="post" enctype="text/plain">
+                    <h4 class="tituloFormulario">Finalizar compra</h4>
+                    <input type="text" class="form-control" id="inputName" placeholder="Ingrese su nombre." required>
+                    <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Ingrese su numero de celular." required>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese su direccion" required>
+                    <button type="submit" class="btn btn-warning" id="finish">Finalizar</button>
+                    <button type="reset" class="btn btn-warning" id="cancel">Cancelar</button>
+                </form>    
+            </div>
+        </section>
         <button id="emptyCard" class="primary-button empty">Empty</button>
     </aside>
 
@@ -140,27 +131,6 @@
             <span class="sr-only">Next</span>
         </button>
     </div>
-<!--     <section class="sectionForm">
-        <div class="container formContact"> <!--abs-center-->
-<!--             <form id="form" action="" method="post" enctype="text/plain">
-                <h3 class="tituloFormulario">Agregar producto al carro</h3>
-                <input type="text" class="form-control" id="inputId" placeholder="Ingrese ID del producto" required>
-                <input type="text" class="form-control" id="inputName" placeholder="Ingrese nombre del producto" required>
-                <input type="text" class="form-control" id="inputAmount" placeholder="Ingrese cantidad requerida" required>
-                <input type="text" class="form-control" id="inputPrice" placeholder="Ingrese precio del producto" required>
-                <button type="submit" class="btn btn-warning">Enviar</button>
-                <button type="reset" class="btn btn-warning">Borrar todo</button>
-            </form>    
-        </div>
-        <div id="productsContainer" class="container productsGree"></div>
-    </section>
-
-    <section class="preDelivery">
-        <article class="buttons">
-            <button type="button" class="btn btn-warning" id="btnCalculateCost">Calcuar precio final $$</button>
-            <p class="totalCar" id="totalCost"></p>
-        </article>
-    </section -->> 
 
     <footer>
         <div clas="footerNav">

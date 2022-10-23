@@ -4,7 +4,6 @@
 
 //Variables
 $colorPrincialOscuro: #006f54;
-$colorPrincipalMedio: #00916e;
 $colorPrincipalClaro: #00ffc11f;
 $colorBlanco: #fff;
 $colorNegro: #000000;
@@ -25,9 +24,9 @@ body {
     box-sizing: border-box;
     height: auto;
     width: auto;
-    padding: 3px;
     scroll-behavior: smooth;
-    background-color: $colorPrincipalClaro;
+    /* background-color: $colorPrincipalClaro; */
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
 }
 
 /* ------------------------ Header ------------------------------*/
@@ -43,8 +42,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 24px;
-    background-color: $colorPrincialOscuro;
-    border-bottom: 1px solid $colorNegro;
+    /* background-color: $colorPrincialOscuro; */
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+    border-bottom: 1px solid $colorBlanco;
+    box-shadow: 0 0 5px $colorBlanco;
 }
 .menu {
     display: none;
@@ -80,6 +81,7 @@ body {
     align-items: center;
     height: 60px;
 }
+
 .navbar-left {
     display: flex;
 }
@@ -96,12 +98,28 @@ body {
 .navbar-right ul li a:hover {
     background-color: $colorBlanco;
 }
+
+.identificationFormC {
+    display: flex;
+}
+.getInto {
+    width: 110px!important;
+    margin-top: 14px;
+    margin-right: 6px;
+}
+.singOut {
+    width: 100px!important;
+    margin-bottom: 18px!important;
+    margin-right: 20px;
+} 
 .navbar-email {
     color: $colorBlanco;
     text-shadow: 0 0 10px $colorBlanco;
     cursor: pointer;
     font-size: $sm;
     margin-right: 12px;
+    padding-top: 25px;
+    padding-right: 15px;
 }
 .navbar-email:hover {
     color: $colorNegro;
@@ -110,18 +128,19 @@ body {
 .navbar-shopping-cart {
     position: relative;
     cursor: pointer;
+    padding-top: 10px;
 }
 .navbar-shopping-cart div {
-    width: 9px;
-    height: 9px;
-    background-color: $colorBlanco;
-    color: $colorNegro;
-    text-shadow: 0 0 10px $colorNegro;
+    width: 13px;
+    height: 13px;
+    background-color: $colorNegro;
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
     border-radius: $bRadius;
     font-size: $sm;
     font-weight: bold;
     position: absolute;
-    top: -6px;
+    top: -2px;
     right: -3px;
     display: flex;
     justify-content: center;
@@ -132,12 +151,14 @@ body {
 
 .desktop-menu {
     position: absolute;
-    top: 75px;
+    top: 72px;
     right: 60px;
-    background: $colorPrincialOscuro;
-    width: 130px;
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+    width: 140px;
     height: auto;
     padding: 20px 20px 0 20px;
+    border: 1px solid $colorBlanco;
+    box-shadow: 0px 0px 10px $colorBlanco;
 }
 .desktop-menu ul {
     list-style: none;
@@ -145,60 +166,7 @@ body {
     margin: 0;
 }
 .desktop-menu ul li {
-    text-align: end;   
-}
-.desktop-menu ul li:nth-child(1), .desktop-menu ul li:nth-child(2) {
-    font-weight: bold;    
-}
-.desktop-menu ul li:last-child {
-    padding-top: 20px;
-    border-top: 1px solid $colorNegro;  
-}
-.desktop-menu ul li:last-child a {
-    color: $colorNegro;    
-    font-size: $sm;
-}
-.desktop-menu ul li a {
-    color: $colorNegro;
-    text-decoration: none;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-/* --------------------- Mobile Menu ------------------------*/
-
-.mobile-menu {
-    position: absolute;
-    top: 75px;
-    padding: 24px;
-    background-color: $colorPrincialOscuro;
-}
-.mobile-menu a {
-    text-decoration: none;
-    color: $colorNegro;
-    font-weight: bold;
-}
-.mobile-menu ul {
-    padding: 0;
-    margin: 24px 0 0;
-    list-style: none;
-}
-.mobile-menu ul:nth-child(1) {
-    border-bottom: 1px solid $colorNegro;
-}
-.mobile-menu ul li {
-    margin-bottom: 24px;
-}
-.email {
-    color: $colorBlanco !important;
-    text-shadow: 0 0 10px $colorBlanco;
-    font-size: $sm;
-    font-weight: 300 !important;
-}
-.sign-out {
-    font-size: $sm;
-    color: $colorNegro !important;
-    text-shadow: 0 0 10px $colorBlanco;
+    text-align: center;   
 }
 
 
@@ -207,17 +175,12 @@ body {
 .product-detail {
     width: 360px;
     padding: 0 24px;
-    background-color: $colorPrincialOscuro;
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
     box-sizing: border-box;
     position: absolute;
     right: 0;
-}
-.title-container {
-    display: flex;
-}
-.title-container img{
-    transform: rotate(180deg);
-    margin-right: 14px;
+    border: 1px solid $colorBlanco;
+    box-shadow: 0px 0px 10px $colorBlanco;
 }
 .title {
     font-size: $md;
@@ -231,7 +194,6 @@ body {
     grid-template-columns: auto 1fr;
     gap: 16px;
     align-items: center;
-    background-color: $colorPrincialOscuro;
     margin-bottom: 24px;
     border-radius: 8px;
     padding: 0 24px;
@@ -260,7 +222,7 @@ body {
     cursor: pointer;
     font-size: $md;
     font-weight: bold;
-    height: 50px;
+    height: 30px;
     margin-bottom: 5px;
 }
 .primary-button:hover {
@@ -285,27 +247,59 @@ body {
     object-fit: cover;
 }
 .shopping-cart p:nth-child(2) {
-    color: $colorNegro;
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
 }
 .shopping-cart p:nth-child(3) {
     font-size: $md;
     font-weight: bold;
+    color: $colorBlanco;
+    text-shadow: 0 0 10px $colorBlanco;
 }
-.shopping-cart figure button:nth-child(4) {
-    width: 10px;
-    padding-bottom: 8px;
+
+.sectionForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.formContact {
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
+    height: auto;
+    width: 80%;
+    padding: 10px;
+    border: 1px $colorNegro solid;
+    box-shadow: 0px 0px 10px $colorNegro;
+    border-radius: 25px;
+    margin: 15px;
+}
+.form-control {
+    color: $colorBlanco;
+    background-color: $colorNegro;
+    border: 1px solid $colorBlanco;
+    box-shadow: 0px 0px 10px $colorBlanco;
+    width: 90%;
+    padding: 7px;
+    margin: 10px;
+}
+.tituloFormulario {
+    color: $colorNegro;
+    text-align: center;
+    padding: 3px;
+    text-decoration: underline;
+    text-shadow: 0 0 5px $colorBlanco;
+}
+
 
 /* ------------------ Main Index ---------------------*/
 
 .jumbotron {
     background-image: url(https://w0.peakpx.com/wallpaper/438/10/HD-wallpaper-video-game-charactors-game-warrior-video-charctors.jpg);
-    /* border-image: $borderRadius; */
     background-size: cover;
     background-position: center;
     color: $colorBlanco;
     .titulo {
-        color: $colorNegro;
+        color: $colorBlanco;
         padding: 3px;
         text-align: center;
         text-decoration: underline;
@@ -317,7 +311,7 @@ body {
         padding: 3px;
         text-align: center;
         text-decoration: underline;
-        color: $colorNegro;
+        color: $colorBlanco;
         text-shadow: 0 0 5px $colorBlanco;
     }
 }
@@ -333,6 +327,8 @@ body {
 }
 .product-card {
     width: 240px;
+    color: $colorBlanco;
+    text-shadow: 0 0 5px $colorBlanco;
 }
 .product-card img {
     width: 240px;
@@ -367,42 +363,7 @@ body {
 }
 
 /* ------------------ Desafios ---------------------*/
-.sectionForm {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 
-.formContact {
-    background-color: $colorPrincialOscuro;
-    height: 370px;
-    width: 30%;
-    padding: 10px;
-    border: 1px $colorNegro solid;
-    box-shadow: 0px 0px 10px $colorNegro;
-    border-radius: 25px;
-    margin: 15px;
-}
-.form-control {
-    color: $colorBlanco !important;
-    background-color: $colorNegro !important;
-    border: 1px solid $colorBlanco !important;
-    box-shadow: 0px 0px 10px $colorBlanco;
-}
-.tituloFormulario {
-    color: $colorNegro;
-    text-align: center;
-    padding: 3px;
-    text-decoration: underline;
-    text-shadow: 0 0 5px $colorNegro;
-}
-.form-control {
-    background-color: transparent;
-    padding: 7px;
-    margin: 10px;
-    border: 1px $colorNegro solid;
-    width: 90%;
-}
 .btn {
     background-color: $colorNegro;
     padding: 7px;
@@ -421,57 +382,16 @@ body {
     background-color: $colorBlanco;
     border: 2px $colorNegro solid;
 }
-.productsGree {
-    background-color: $colorPrincialOscuro;
-    height: auto;
-    width: 60%;
+
+/* ------------------------ Carousel ------------------------------*/
+
+.carousel {
     padding: 10px;
-    border: 1px $colorNegro solid;
-    box-shadow: 0px 0px 10px $colorNegro;
-    border-radius: 25px;
-    margin: 15px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
-.exampleCard {
-    background-color: $colorPrincipalMedio;
-    border: 1px solid $colorBlanco !important;
-    box-shadow: 0px 0px 10px $colorBlanco;
+.card {
+    border: none;
 }
-.exampleCardBody {
-    border: 1px solid $colorNegro !important;
-    box-shadow: 0px 0px 10px $colorNegro;
-}
-.pCard {
-    padding: 10px;
-    color: $colorBlanco !important;
-    background-color: $colorNegro !important;
-    border: 1px solid $colorBlanco !important;
-    box-shadow: 0px 0px 10px $colorBlanco;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center
-}
-.totalCar {
-    margin-top: 12px;
-    border: 1px solid $colorNegro;
-    color: $colorNegro;
-    text-shadow: 0 0 5px $colorNegro;
-}
-
-.probando {
-    width: 100;
-    height: 200;
-    padding: 20px;
-    margin: 15px;
-    border: 1px solid $colorPrincialOscuro;
-}
-
 /* ------------------------ Footer ------------------------------*/
 
 footer {
@@ -480,9 +400,11 @@ footer {
     margin: 0;
     display: flex;
     flex-direction: row;
-    background-color: $colorPrincialOscuro;
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54);
     justify-content: space-around;
     align-items: center;
+    border-top: 1px solid $colorBlanco;
+    box-shadow: 0 0 5px $colorBlanco;
 }
 
 .barra {
@@ -523,7 +445,7 @@ footer {
     font-size: 16px;
 }
 
-
+/* ------------------------ Media ------------------------------*/
 
 @media (max-width: 640px) {
     /* Product List */
@@ -541,27 +463,22 @@ footer {
 }
 
 @media (max-width: 800px) {
-/* ------------------------ Header ------------------------------*/
-    .menu {
-        display: block;
-    }
-    .navbar-left ul {
-        display: none;
-    }
-    .navbar-email {
-        display: none;
-    }
-    .desktop-menu {
-        display: none;
-    }
+
     .product-detail {
         width: 100%;
     }
 }
 
-@media (min-width: 801px) {
-/* ------------------------ Header ------------------------------*/
-    .mobile-menu {
-        display: none;
-    }
+/* ------------------------ Sweet ------------------------------*/
+
+.swal2-container.swal2-center>.swal2-popup {
+    background: $colorNegro;
+    border: 1px solid $colorBlanco;
+    box-shadow: 0 0 5px $colorBlanco;
+    color: $colorBlanco;
+    text-shadow: 0 0 5px $colorBlanco;
+}
+
+.swal2-styled.swal2-confirm {
+    background-image: radial-gradient(circle, #006f54, #065d47, #0b4b3a, #0c392d, #0c2921, #0c2921, #0c2921, #0c2921, #0c392d, #0b4b3a, #065d47, #006f54) !important;
 }
