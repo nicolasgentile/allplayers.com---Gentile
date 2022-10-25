@@ -68,14 +68,22 @@ function toggleCarritoAside () { // Si abrimos el carrito se cierra el menu
 };
 
 async function consultarJson () { //LLamando a JSON
-    await fetch ('../products.json')
-    .then((Response) => Response.json())
-    .then((info) => {
+    /* await */ /* fetch ('../products.json')
+    .then ((response) => response.json())
+    .then ((info) => {
         console.log(info)
         productList = [...info]
         pain()
     })
-    .catch((error) => console.log(error));
+    .catch(error => console.log(error.message) ); */
+    try {
+        const response = await fetch ('../products.json');
+        const info = await response.json();
+        productList = [...info]
+        pain()
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 consultarJson();
